@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gird.css">
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .sec-banner{
+            background-color: black;
+        }
+        .sec-banner img{
+            width: 100%;
+            vertical-align: bottom;
+            object-fit: cover;
+        }
+        .sec-banner .container{    
+            background-color: #fff;
+        }
+        .sec-banner .container>.row{
+            flex-direction: column;
+            align-items: center;
+        }
+        .sec-banner .col-10{
+            width: 100%;
+        }
+        .sec-banner .container .row .col-2{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .sec-banner .container .row .col-2>h3{
+            font-size: 48px;
+            padding: 20px 30px;
+        }
+        .sec-banner .container .row .col-2>small{
+            font-size: 30px;
+            padding-left: 200px;
+        }
+        .sec-banner .col-3 .item{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sec-banner .col-3 .item .pic img{
+            width: 100%;
+            vertical-align: bottom;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .sec-banner .col-3 .item h3{
+            padding-top: 60px;
+            position: relative;
+        }
+        .sec-banner .col-3:nth-child(1) h3:after{
+            content: 'Free';
+            font-size: 30px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        .sec-banner .col-3:nth-child(2) h3:after{
+            content: '1.2k';
+            font-size: 30px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        .sec-banner .col-3:nth-child(3) h3:after{
+            content: '95%';
+            font-size: 30px;
+            position: absolute;
+            top: 15px;
+            right: 10px;
+        }
+        .sec-banner .col-3:nth-child(4) h3:after{
+            content: '95%';
+            font-size: 30px;
+            position: absolute;
+            top: 15px;
+            right: 10px;
+        }
+       
+
+        
+    </style>
+</head>
+<body>
+    <section class="sec-banner">   
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <h3>Do you want a job?</h3>
+                    <small>I don't care about you!!!!</small>
+                </div>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="pic">
+                                <img src="https://picsum.photos/500/400?random=60" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="item">
+                                        <div class="pic">
+                                            <img src="https://picsum.photos/500/400?random=50" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <h3>求職服務費</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="item">
+                                        <div class="pic">
+                                            <img src="https://picsum.photos/500/400?random=40" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <h3>網站用戶數</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="item">
+                                        <div class="pic">
+                                            <img src="https://picsum.photos/500/400?random=30" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <h3>成功求職率</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="item">
+                                        <div class="pic">
+                                            <img src="https://picsum.photos/500/400?random=20" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <h3>服務滿意度</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+</body>
+</html>

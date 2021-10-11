@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gird.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+        .find-job .search-bar{
+            font-size: 0;
+            display: flex;
+            padding-bottom: 10px;
+        }
+        .find-job .container > .row{
+            align-items: center;
+        }
+        .find-job .container .row .col-4 .item-aside{
+            display: flex;
+            justify-content: center;
+        }
+        .find-job .search-bar input,
+        .find-job .search-bar button{
+            border: none;
+            background-color: rgb(233, 227, 227);
+            padding: 5px 10px;
+        }
+        .find-job .search-bar input{
+            border-radius: 200px 0px 0px 200px;
+        }
+        .find-job .search-bar button{
+            border-radius: 0px 200px 200px 0;
+        }
+        .find-job .search-bar input:focus{
+            outline: none;
+        }
+        .find-job .option-list{
+            padding-bottom: 30px;
+        }
+        .find-job .option-list h3{
+            padding-bottom: 10px;
+        }
+        .find-job .option-list .iption{
+            padding-bottom: 5px;
+        }
+        .find-job .col-8>.row{
+            flex-direction: column;
+            align-items: center;
+        }
+        .find-job .col-10>.row{
+            justify-content: center;      
+        }
+        .find-job .page ul{
+            display: flex;
+            justify-content: space-between;
+        }
+        .find-job .col-3{
+            width: 300px
+        }
+        .find-job .col-3 a{
+            text-decoration: none;
+            color:rgb(8, 8, 8);
+        }
+        .find-job .col-3 .item{
+            background-color: rgb(219, 217, 217);
+            padding: 30px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 5px;
+            position: relative;
+            transition: 2s ease-in-out;
+        }
+        .find-job .col-3 .item:hover:before{
+            content:'';
+            position: absolute;
+            top: -10px;
+            left: 0px;
+            z-index: 1; 
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: url(star.png);
+            background-size: cover;
+            transition: 1s ease-in-out;
+        }
+       
+        .find-job .col-3 .item::after{
+            content: '';
+            border-top:20px solid transparent  ;
+            border-bottom:20px solid rgb(228, 131, 114)  ;
+            border-left:20px solid transparent  ;
+            border-right:20px solid rgba(228, 131, 114)  ;
+            position: absolute;
+            border-radius: 5px;
+            bottom: 0;
+            right: 0;
+            transition: 1s;
+        }
+        .find-job .col-3 .item:hover:after{
+            content: '';
+            border-top:20px solid rgb(228, 131, 114)  ;
+            border-bottom:20px solid white  ;
+            border-left:20px solid rgba(228, 131, 114)  ;
+            border-right:20px solid white  ;
+            position: absolute;
+            border-radius: 5px;
+            bottom: 0;
+            right: 0;
+        }
+        .find-job .col-3 .item p,
+        .find-job .col-3 .item h2{
+            padding-bottom: 10px;
+        }
+        .find-job .col-3 .item .job-local,
+        .find-job .col-3 .item .job-price{
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+        }
+        .find-job .page-list a{
+            text-decoration: none;
+            padding-right: 20px;
+        }
+
+            
+
+
+    </style>
+</head>
+<body>
+    <section class="find-job">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="item-aside">
+                        <form action="#">
+                            <div class="search-bar">
+                                <input type="text" placeholder=" 請輸入關鍵字">
+                                <button>
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                            <div class="option-list">
+                                <h3>國家</h3>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        新加坡
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        阿聯酋
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        柬埔寨
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        菲律賓
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        日本
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="option-list">
+                                <h3>職缺種類</h3>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        資訊軟體
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        餐飲服務
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        休閒娛樂
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        客戶服務
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        行銷企劃
+                                    </label>
+                                </div>
+                            </div>
+                            <input type="submit" value="開始搜尋">
+                            
+                        </form>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="row">
+                                <div class="col-3">
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="job-title">
+                                                <h2>前端工程師</h2>
+                                            </div>
+                                            <div class="job-local">
+                                                <p>2020/10/10</p>
+                                                <p>【菲律賓】</p>
+                                            </div>
+                                            <div class="job-price">
+                                                <p>正職</p>
+                                                <p>ＮＴ＄ 90k up</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="job-title">
+                                                <h2>後端工程師</h2>
+                                            </div>
+                                            <div class="job-local">
+                                                <p>2020/10/10</p>
+                                                <p>【菲律賓】</p>
+                                            </div>
+                                            <div class="job-price">
+                                                <p>正職</p>
+                                                <p>ＮＴ＄ 80k up</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="job-title">
+                                                <h2>賭場公關</h2>
+                                            </div>
+                                            <div class="job-local">
+                                                <p>2020/10/10</p>
+                                                <p>【澳門】</p>
+                                            </div>
+                                            <div class="job-price">
+                                                <p>正職</p>
+                                                <p>ＮＴ＄ 80k up</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="job-title">
+                                                <h2>帳房專員</h2>
+                                            </div>
+                                            <div class="job-local">
+                                                <p>2020/10/10</p>
+                                                <p>【澳門】</p>
+                                            </div>
+                                            <div class="job-price">
+                                                <p>正職</p>
+                                                <p>ＮＴ＄ 70k up</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="job-title">
+                                                <h2>機場地勤</h2>
+                                            </div>
+                                            <div class="job-local">
+                                                <p>2020/10/10</p>
+                                                <p>【新加坡】</p>
+                                            </div>
+                                            <div class="job-price">
+                                                <p>正職</p>
+                                                <p>ＮＴ＄ 80k up</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="job-title">
+                                                <h2>外場服務員</h2>
+                                            </div>
+                                            <div class="job-local">
+                                                <p>2020/10/10</p>
+                                                <p>【新加坡】</p>
+                                            </div>
+                                            <div class="job-price">
+                                                <p>正職</p>
+                                                <p>ＮＴ＄ 60k up</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="job-title">
+                                                <h2>文字客服專員</h2>
+                                            </div>
+                                            <div class="job-local">
+                                                <p>2020/10/10</p>
+                                                <p>【日本】</p>
+                                            </div>
+                                            <div class="job-price">
+                                                <p>正職</p>
+                                                <p>ＮＴ＄ 60k up</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    <a href="#">
+                                        <div class="item">
+                                            <div class="job-title">
+                                                <h2>診所助理</h2>
+                                            </div>
+                                            <div class="job-local">
+                                                <p>2020/10/10</p>
+                                                <p>【日本】</p>
+                                            </div>
+                                            <div class="job-price">
+                                                <p>正職</p>
+                                                <p>ＮＴ＄ 60k up</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="page">
+                                <ul class="page-list">
+                                    <li>
+                                        <a href="#">
+                                            《
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            1
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            2
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            3
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            4
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            》
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

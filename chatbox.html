@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+        .chat-job{
+            margin-top: 60px;
+        }
+        .message-box{
+            margin: auto;
+            font-size: 0px;
+            display: flex;
+            justify-content: center;
+            width: 500px;
+            padding: 0px 10px;
+            box-shadow: 0 0 20px rgba(155, 155, 156, 0.3);
+            background-color: rgba(199, 199, 199, 0.3);
+            backdrop-filter: blur(20 px);
+            flex-direction: column;
+        }
+        .user{
+            display: flex;
+            align-items: flex-end;
+            margin: 15px 0px;
+        }
+        
+        .user .chat-txt{
+           background-color:rgb(255, 255, 255);
+           /* margin: 10px; */
+           padding: 5px;
+           position: relative;
+           margin-left: 10px;
+           border-radius: 5px;
+           font-size: 16px;
+        }
+        .user .chat-txt::before{
+            content: '';
+            width: 0;
+            height: 0;
+            border: 10px solid;
+            border-color: transparent rgb(255, 255, 255) transparent transparent ;
+            position: absolute;
+            bottom: 1px;
+            left: -18px;
+        }
+        .user .chat-box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100px;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+        .user .chat-box .pic{
+            width: 60px;
+            overflow: hidden;
+            border-radius: 100%;
+            
+        }
+        .user .chat-box .pic img{
+            width: 100%;
+            vertical-align: middle;
+            
+        }
+        .service{
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            font-size: 16px;
+            margin: 15px 0px;
+        }
+        .service .chat-txt{    
+            background-color: rgb(0, 0, 0);
+            /* margin: 10px; */
+           padding: 5px;
+           position: relative;
+           margin-right: 10px;
+           border-radius: 5px;
+           font-size: 16px;
+           color:#fff;
+           
+        }
+        .service .chat-txt::before{
+            content: '';
+            width: 0;
+            height: 0;
+            border: 10px solid;
+            border-color: transparent transparent transparent rgb(0, 0, 0) ;
+            position: absolute;
+            bottom: 1px;
+            right: -18px;
+        }
+        .service .chat-box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100px;
+            flex-shrink: 0;
+            order: 1;
+            font-size: 16px;
+            
+        }
+        .service .chat-box .pic{
+            width: 60px;
+            overflow: hidden;
+            border-radius: 100%;
+        }
+        .service .chat-box .pic img{
+            width: 100%;
+            vertical-align: middle;
+            
+        }
+        .container .typeing{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 5px;
+            padding: 5px;
+            
+        }
+        .container .typeing input{
+            width: 300px;
+            border:none;
+            background-color: #fff;
+            padding: 15px 20px;
+            border-radius: 200px 0px 0px 200px;
+        }
+        .container .typeing button{
+            border:none;
+            background-color: #fff;
+            padding: 15px 20px;
+            border-radius: 0px 200px 200px 0px;
+            color: rgb(40, 198, 247);
+        }
+        .container .typeing input:focus{
+            outline: none;
+        }
+
+        
+       
+    </style>
+</head>
+<body>
+    <section class="chat-job">
+        <div class="message-box">
+            <div class="container">
+                <div class="user">
+                    <div class="chat-box">
+                        <div class="pic">
+                            <img src="team1.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            線上顧問
+                        </div>
+                    </div>
+                    <div class="chat-txt">
+                        客服人員以上線為您安排面試
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="chat-box">
+                        <div class="pic">
+                            <img src="team2.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            MIKE YU
+                        </div>
+                    </div>
+                    <div class="chat-txt">
+                        我要挑糞
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="chat-box">
+                        <div class="pic">
+                            <img src="team1.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            線上顧問
+                        </div>
+                    </div>
+                    <div class="chat-txt">
+                        信諾是一家美國醫療保健公司，提供各類保險和其他一些醫療服務。該公司旗下有多家分公司負責不同業務，如信諾環球人壽保險及信諾環球保險等。2018年它列在財富美國500強中的第73位
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="chat-box">
+                        <div class="pic">
+                            <img src="team2.jpg" alt="">
+                        </div>
+                        <div class="name">
+                            MIKE YU
+                        </div>
+                    </div>
+                    <div class="chat-txt">
+                        想詢問康健人壽
+                    </div>
+                </div>
+        
+                <div class="typeing">
+                    <form action="#">
+                        <input type="text" placeholder=" 請輸入您的問題">
+                        <button>發送</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+</body>
+</html>

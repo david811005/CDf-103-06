@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gird.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700;900&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700;900&display=swap');
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+        *{
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        body{
+            position: relative;
+            margin-top: 70px;
+        }
+        .main-nav{
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 5;
+        }
+        .main-nav .logo{
+            width: 50px;
+            height: 50px;
+        }
+        .main-nav .col-2{
+            margin-left: -15px;
+        }
+        .main-nav .logo img{
+            width: 100%;
+            object-fit: cover;
+            vertical-align: bottom;
+
+        }
+        .main-nav .container .row{
+            align-items: center;
+            padding: 10px 0px;
+        }
+        .main-nav a{
+            padding-left: 10px;
+            text-decoration: none;
+            color: white;
+        }
+        .main-nav .col-2{
+            margin-bottom: 0px;
+        }
+        .main-nav .col-6{
+            margin-bottom: 0px;
+        }
+        .main-nav .col-4{
+            margin-bottom: 0px;
+            display: flex;
+            justify-content: flex-end;
+            margin-left: 15px;
+        }
+
+        .job-banner{
+            position: relative;
+        }
+        .job-banner img{
+            width: 100%;
+            object-fit: cover;
+            vertical-align: middle;
+            height: 300px;
+        }
+        .job-banner .banner-title::before{
+            content: '職場資源';
+            top: 80px;
+            left: 60px;
+            position: absolute;
+            font-size: 36px;
+            font-weight: 700;
+
+        }
+        .blog .wrap{
+            width: 1200px;
+            margin: auto;
+        }
+        .blog .blog-title{
+            text-align: center;
+            font-size: 36px;
+            margin: 60px;
+            font-weight: 700;
+        }
+        .blog .wrap .item{
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .blog .wrap .pic{
+            width: 55%;
+            flex-shrink: 0;
+        }
+        .blog .wrap .pic img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .blog .wrap .txt{
+            width: 55%;
+            background-color: rgba(243, 243, 242, 0.7);
+            flex-shrink: 0;
+            padding: 30px 30px;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+        .blog .txt h2{
+            padding-bottom: 10px;
+            
+        }
+        .blog .txt p{
+            text-indent: 1em;
+        }
+        .blog .item > :first-child {
+            margin-right: -10%;
+            
+        }
+        .move-back{
+            margin-top: 60px;
+            background: url(allstar.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            object-fit: cover;
+        }
+        .move-back .row{
+            align-items: center;
+            height: 200px;
+        }
+        .move-back .row .item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            margin-bottom: -30px;
+        }
+        .move-back .row .item h2,
+        .move-back .row .item p{
+            padding-bottom: 20px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .move-back .row .item .pic{
+            padding-bottom: 20px;
+        }
+        .move-back img{
+            width: 100%;
+        }
+        .move-back .pic{
+            width: 40px;
+        }
+        .main-footer{
+            background-color: black;
+        }
+        .main-footer .container >.row{
+            flex-direction: column;
+            align-items: center;
+        }
+        .main-footer .container .col-2{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+          
+        }
+        .main-footer .container .col-10{
+            width: 100%;
+        }
+        .main-footer .container .col-10 >.row{
+            align-items: center;
+            padding-top: 30px;
+        }
+        .main-footer .container .item h3{
+            font-size: 14px;
+            border-bottom: 1px solid white;
+            color: #fff;
+        }
+        .main-footer .container .item-logo{
+            font-size: 14px;
+            color: #fff;
+        }
+        .main-footer .container .item-logo h3{
+            margin-bottom: 10px;
+        }
+        .main-footer .container .item-logo li{
+            line-height: 1.4em;
+        }
+        
+        .main-footer .container .item li{
+            color:white;
+            line-height: 1.4em;
+            margin-top: 5px;
+        }
+
+        .main-footer .copy{
+            color:white;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="main-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <div class="logo">
+                        <a href="index.html"><img src="logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <a href="page3findjob.html">精選職缺</a>
+                    <a href="page6blog.html">職場資源</a>
+                    <a href="ourteam.html">關於我們</a>
+                    <a href="page4contact.html">聯絡我們</a>
+                </div>
+                <div class="col-4">
+                    <a href="page2chat.html">即時通訊</a>
+                    <a href="#">會員</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="job-banner">     
+        <img src="sec-banner.jpg" alt="">
+        <div class="banner-title"></div>    
+    </section>
+    <div class="blog">
+        <div class="blog-title">
+            <h2>海外工作者分享</h2>
+        </div>
+        <div class="wrap">
+            <div class="item">
+                <div class="pic">
+                    <img src="blog.jpg" alt="">
+                    
+                </div>
+                <div class="txt">
+                    <h2>心得分享</h2>
+                    <p>而來有一種，有限產業線上商標即將逐步世界盃共享考核資本怎麼樣，成功大門再說創意說著數學，很久審批公路提升權利開發者大會運作婚姻計劃是個，表面黑暗領導推廣模糊共同更加眼中回應，你說寶貝發送，品牌此時資。<a href="#">More...</a></p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="txt">
+                    <h2>心得分享</h2>
+                    <p>豐原因而驚訝緊急必然要去一些，一致請在樓上聲音專家，諮詢可見當中第一章，的人包括年輕人，本來您的你怎麼政治家園可見適用規範畢業生，熟悉不限意見便是家園會員冠軍建設她是列表庫存另一個宣傳頻道，聯盟給我。<a href="#">More...</a></p>
+                </div>
+                <div class="pic">
+                    <img src="blog1.jpg" alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="blog2.jpg" alt="">
+                </div>
+                <div class="txt">
+                    <h2>心得分享</h2>
+                    <p>添加種種也要中學規定打印接觸衣服必要精靈呼吸電子字元他們我一，合作一片精美擁有，當時模糊對付上述是的加盟顧問推坑王以為依據，容易通常合作他的指導，使用程式婦女平衡，百姓新聞頓時醫學微笑報名調整，人體。<a href="#">More...</a></p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="txt">
+                    <h2>心得分享</h2>
+                    <p>我是忽然西安提高，位置平均一致屏幕重要接着電視台認為創作難得父母，不去審核自動猶豫是一個共享成本明年經驗，給我簡單都沒廣大事業一對檢查全球有人情形明星，雖然生活人員江湖全文國內免費歌手負責床上所需圖。<a href="#">More...</a></p>
+                </div>
+                <div class="pic">
+                    <img src="blog3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="move-back">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="item">
+                        <div class="pic">
+                            <img src="airplan.png" alt="">
+                        </div>
+                        <h2>精選職缺</h2>
+                        <p>成為您在海外的強力後盾</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="item">
+                        <div class="pic">
+                            <img src="heart.png" alt="">
+                        </div>
+                        <h2>用心服務</h2>
+                        <p>找到最適合您的職缺</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="item">
+                        <div class="pic">
+                            <img src="drink.png" alt="">
+                        </div>
+                        <h2>享受生活</h2>
+                        <p>開啟不一樣的旅程</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="item-logo">
+                                <h3>Target Job人力資源有限公司</h3>
+                                <ul>
+                                    <li>營業時間：週一至週五 09:30~18:30</li>
+                                    <li>服務專線：123-456-789</li>
+                                    <li>傳真：123-456-799</li>
+                                    <li>公司地址：台北市中壢區墾丁大街太麻里山上</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="item">
+                                        <h3>搜尋職缺</h3>
+                                        <ul>
+                                            <li>精選職缺</li>
+                                            <li>熱門職缺</li>
+                                            <li>Ｑ＆Ａ</li>
+                                         </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="item">
+                                        <h3>職場資源</h3>
+                                        <ul>
+                                            <li>海外工作者分享</li>
+                                            <li>履歷撰寫技巧</li>
+                                            <li>面試技巧</li>
+                                         </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="item">
+                                        <h3>追蹤我們</h3>
+                                        <ul>
+                                            <li>
+                                             <i class="fab fa-instagram"></i>
+                                                <i class="fab fa-twitter-square"></i>
+                                                <i class="fab fa-facebook-square"></i>
+                                            </li>
+                                            <li>我們終於有FB, IG, Youtube了 !!! 在社群媒體上追蹤我們吧!</li>
+                                         </ul>   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="copy">
+                        copyright &copy; 2021 Target Job Human Resource Co.,Ltd. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

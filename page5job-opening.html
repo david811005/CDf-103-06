@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gird.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700;900&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700;900&display=swap');
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+        *{
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        body{
+            position: relative;
+            margin-top: 70px;
+        }
+        .main-nav{
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 5;
+        }
+        .main-nav .logo{
+            width: 50px;
+            height: 50px;
+        }
+        .main-nav .col-2{
+            margin-left: -15px;
+        }
+        .main-nav .logo img{
+            width: 100%;
+            object-fit: cover;
+            vertical-align: bottom;
+
+        }
+        .main-nav .container .row{
+            align-items: center;
+            padding: 10px 0px;
+        }
+        .main-nav a{
+            padding-left: 10px;
+            text-decoration: none;
+            color: white;
+        }
+        .main-nav .col-2{
+            margin-bottom: 0px;
+        }
+        .main-nav .col-6{
+            margin-bottom: 0px;
+        }
+        .main-nav .col-4{
+            margin-bottom: 0px;
+            display: flex;
+            justify-content: flex-end;
+            margin-left: 15px;
+        }
+        .job-con{
+            background-image: url(rightstar.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            object-fit: cover;
+        }
+        .job-con h3,
+        .job-con li{
+            padding-bottom: 10px 0px;
+         }
+        .job-con .job-how ul{
+            display: flex;
+            justify-content: center;
+        }
+        .job-con .job-how ul li{
+            padding: 10px;
+        }
+        .job-con .work-place{
+            padding-bottom: 10px;
+        }
+        .job-con .job-name{
+            width: 100px;
+            padding: 20px;
+            background-color:rgb(219, 217, 217);
+            border-radius: 5px;
+            text-align: center;
+            margin: 30px;
+            position: relative;
+        }
+        .job-con .job-name::before{
+            content: url(star.png);
+            display: block;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: -20px;
+            left: -15px;
+        }
+        .job-con .work-txt h3{
+            padding-bottom: 20px;
+        }
+        .job-con .work-pos li,
+        .job-con .work-txt li{
+            padding: 5px;
+            text-indent: 2em;
+        }
+        .job-con .work-pos h3{
+            padding-bottom: 20px;
+            margin-top: 10px;
+        }
+        .work-pay{
+            padding:20px 20px;
+
+        }
+        .work-time{
+            padding-bottom: 10px;
+            padding-left: 20px;
+            color: #aaa;
+            font-size: 14px;
+
+        }
+        .job-con input{
+            display: block;
+            margin: auto;
+            width: 100px;
+            color: #000;
+            background-color:rgba(255, 0, 0, .4);
+            border: none;
+            border-radius: 10px;
+        }
+        .job-con .path{
+            padding: 10px;
+        }
+        .job-con .path a::before{
+            content: '/';
+            position: absolute;
+            top: 3px;
+            left: -3px;
+        }
+        .job-con .path a{
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+            position: relative;
+            padding: 0px 5px;
+        }
+        .job-con .path span{
+            color: #aaa;
+        }
+        .sec-banner{
+            margin-top: 60px;
+        }
+        .sec-banner img{
+            width: 100%;
+            vertical-align: bottom;
+            object-fit: cover;
+        }
+        .sec-banner .container{    
+            background-color: #fff;
+        }
+        .sec-banner .container>.row{
+            flex-direction: column;
+            align-items: center;
+        }
+        .sec-banner .col-10{
+            width: 100%;
+        }
+        .sec-banner .container .row .col-2{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .sec-banner .container .row .col-2>h3{
+            font-size: 48px;
+            padding: 20px 30px;
+            font-weight: 700;
+        }
+        .sec-banner .container .row .col-2>small{
+            font-size: 30px;
+            padding-left: 200px;
+            font-weight: 300;
+        }
+        .sec-banner .col-3 .item{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sec-banner .col-3 .item .pic{
+            width: 100px;
+        }
+        .sec-banner .col-3 .item .pic img{
+            width: 100%;
+            vertical-align: bottom;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .sec-banner .col-3 .item h3{
+            padding-top: 60px;
+            position: relative;
+        }
+        .sec-banner .col-3:nth-child(1) h3:after{
+            content: 'Free';
+            font-size: 30px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        .sec-banner .col-3:nth-child(2) h3:after{
+            content: '1.2k';
+            font-size: 30px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        .sec-banner .col-3:nth-child(3) h3:after{
+            content: '95%';
+            font-size: 30px;
+            position: absolute;
+            top: 15px;
+            right: 10px;
+        }
+        .sec-banner .col-3:nth-child(4) h3:after{
+            content: '95%';
+            font-size: 30px;
+            position: absolute;
+            top: 15px;
+            right: 10px;
+        }
+        .main-footer{
+            background-color: black;
+        }
+        .main-footer .container >.row{
+            flex-direction: column;
+            align-items: center;
+        }
+        .main-footer .container .col-2{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+          
+        }
+        .main-footer .container .col-10{
+            width: 100%;
+        }
+        .main-footer .container .col-10 >.row{
+            align-items: center;
+            padding-top: 30px;
+        }
+        .main-footer .container .item h3{
+            font-size: 14px;
+            border-bottom: 1px solid white;
+            color: #fff;
+        }
+        .main-footer .container .item-logo{
+            font-size: 14px;
+            color: #fff;
+        }
+        .main-footer .container .item-logo h3{
+            margin-bottom: 10px;
+        }
+        .main-footer .container .item-logo li{
+            line-height: 1.4em;
+        }
+        
+        .main-footer .container .item li{
+            color:white;
+            line-height: 1.4em;
+            margin-top: 5px;
+        }
+
+        .main-footer .copy{
+            color:white;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="main-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <div class="logo">
+                        <a href="index.html"><img src="logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <a href="page3findjob.html">精選職缺</a>
+                    <a href="page6blog.html">職場資源</a>
+                    <a href="ourteam.html">關於我們</a>
+                    <a href="page4contact.html">聯絡我們</a>
+                </div>
+                <div class="col-4">
+                    <a href="page2chat.html">即時通訊</a>
+                    <a href="#">會員</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="job-con">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="path">
+                        <span>搜尋結果</span>
+                        <a href="#">菲律賓</a>
+                        <a href="#">資訊軟體</a>
+                        <a href="#">正職</a>
+                        <a href="page3findjob.html">回上一頁</a>
+                    </div>
+                    <div class="job-name">
+                        <h2>前端工程師</h2>
+                    </div>
+                    <div class="job-how">
+                        <ul>
+                            <li>提供食宿</li>
+                            <li>合法工簽</li>
+                            <li>全勤獎金</li>
+                            <li>生活津貼</li>
+                            <li>員工旅遊</li>
+                            <li>生日禮金</li>
+                        </ul>
+                    </div>
+                    <div class="work-place">
+                        <span>工作地點:</span>
+                        <span>菲律賓</span>
+                    </div>
+                    <div class="work-place">
+                        <span>工作性質:</span>
+                        <span>正職</span>
+                    </div>
+                    <div class="work-txt">
+                        <h3>工作內容:</h3>
+                        <ul>
+                            <li>負責公司網站、後台管理系統、MobileWeb、Hybrid App的日常開發及維護。</li>
+                            <li>依據需求跟產品經理溝通完成產品需求。</li>
+                            <li>根據UI設計完成前端介面開發。</li>
+                            <li>與後端工程師做API對接。</li>
+                            <li>持續優化前端介面體驗及頁面響應速度，保證其相容性及執行效率，隨時排除技術難題。</li>
+                            <li>完成主管其他交辦事項。</li>
+                        </ul>
+                    </div>
+                    <div class="work-pos">
+                        <h3>應徵條件:</h3>
+                        <ul>
+                            <li>緯育Tibame畢業的學生。</li>
+                            <li>熟悉前端開發技術 HTML/ HTML5、CSS/CSS3、JS、jQuery。。</li>
+                            <li>熟悉H5+、vue、react等主流框架的設計，且須精通至少其中一種。</li>
+                            <li>工作認真，有責任心，具備良好團隊溝通與協作能力。</li>
+                            <li>學習能力強，能快速掌握新的開發技術。</li>
+                        </ul>
+                    </div>
+                    <div class="work-pay">
+                        <span>薪資:</span>
+                        <span>NT $ 90k up</span>
+                    </div>
+                    <div class="work-time">
+                        <span>張貼日期: 2020/10/10</span>
+                    </div>
+                    <input type="button" value="我要應徵">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec-banner">   
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <h3>Do you want a job?</h3>
+                    <small>Start chat with us!</small>
+                </div>
+                        <div class="col-10">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="item">
+                                        <div class="pic">
+                                            <img src="user.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <h3>求職服務費</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="item">
+                                        <div class="pic">
+                                            <img src="user01.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <h3>網站用戶數</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="item">
+                                        <div class="pic">
+                                            <img src="user02.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <h3>成功求職率</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="item">
+                                        <div class="pic">
+                                            <img src="user03.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <h3>服務滿意度</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="item-logo">
+                                <h3>Target Job人力資源有限公司</h3>
+                                <ul>
+                                    <li>營業時間：週一至週五 09:30~18:30</li>
+                                    <li>服務專線：123-456-789</li>
+                                    <li>傳真：123-456-799</li>
+                                    <li>公司地址：台北市中壢區墾丁大街太麻里山上</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="item">
+                                        <h3>搜尋職缺</h3>
+                                        <ul>
+                                            <li>精選職缺</li>
+                                            <li>熱門職缺</li>
+                                            <li>Ｑ＆Ａ</li>
+                                         </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="item">
+                                        <h3>職場資源</h3>
+                                        <ul>
+                                            <li>海外工作者分享</li>
+                                            <li>履歷撰寫技巧</li>
+                                            <li>面試技巧</li>
+                                         </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="item">
+                                        <h3>追蹤我們</h3>
+                                        <ul>
+                                            <li>
+                                             <i class="fab fa-instagram"></i>
+                                                <i class="fab fa-twitter-square"></i>
+                                                <i class="fab fa-facebook-square"></i>
+                                            </li>
+                                            <li>我們終於有FB, IG, Youtube了 !!! 在社群媒體上追蹤我們吧!</li>
+                                         </ul>   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="copy">
+                        copyright &copy; 2021 Target Job Human Resource Co.,Ltd. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
