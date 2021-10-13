@@ -62,70 +62,25 @@
             justify-content: flex-end;
             margin-left: 15px;
         }
-        .work-blog .container{
-            margin-top: 60px;
-        }
-        .work-blog .container .col-8 img{
-            width: 100%;
-            vertical-align: middle;
-            height: 200px;
-        }
-        .work-blog .container .col-4 img{
-            width: 100%;
-            vertical-align: middle;
-        }
-        .work-blog .col-3{
-            padding: 0px;
-            margin-bottom: 0px;
-        }
-        .work-blog .container .row > .col-4{
-            padding: 0px;
-            margin-bottom: 0px;
-            display:flex;
-            
-        }
-        .work-blog .container .row .col-8{
-            height: 100%;
-            display: flex;
-            margin-left: -15px;
-            margin-bottom: 0px;
-            padding: 0px;
-        }
-        #change{
+        .job-banner{
             position: relative;
         }
+        .job-banner img{
+            width: 100%;
+            object-fit: cover;
+            vertical-align: middle;
+            height: 300px;
+        }
+        .job-banner .banner-title::before{
+            content: '聯絡我們';
+            top: 80px;
+            left: 60px;
+            position: absolute;
+            font-size: 36px;
+            font-weight: 700;
 
-        #change::before{
-            content: '';
-            position: absolute;
-            top: 0%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            vertical-align: bottom;
-            object-fit: cover;
         }
-        #uni{
-            position: relative;
-        }
-        #uni::before{
-            content: '';
-            position: absolute;
-            top: 0%;
-            right: 50%;
-            width: 50%;
-            height: 100%;
-            background-color: white;
-            vertical-align: bottom;
-            object-fit: cover;
-        }
-        .work-blog .txt{
-            position: absolute;
-            top: 50%;
-            right:-17.5%;
-            z-index: 2;
-        }
+        
         .contact-us{
             margin-top: 60px;
         }
@@ -318,71 +273,11 @@
         </div>
 
     </section>
-    <section class="work-blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <img src="people.jpg" alt="">
-                </div>
-                <div class="col-8">
-                    <div class="row">
-                        <div class="col-3" id="change">
-                            <img src="philippines.jpg" alt="">
-                            <div class="txt">
-                                <p>海外求職</p>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <img src="dubai.jpg" alt="">
-                        </div>
-                        <div class="col-3" id="change">
-                            <img src="philippines.jpg" alt="">
-                            <div class="txt">
-                                <p>第一品牌</p>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <img src="dubai.jpg" alt="">
-                        </div>
-                        <div class="col-3" id="uni">
-                            <img src="dubai.jpg" alt="">
-                        </div>
-                        <div class="col-3" id="change">
-                            <img src="philippines.jpg" alt="">
-                            <div class="txt">
-                                <p>Target Job</p>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <img src="dubai.jpg" alt="">
-                        </div>
-                        <div class="col-3" id="change">
-                            <img src="philippines.jpg" alt="">
-                        </div>
-                        <div class="col-3" id="change">
-                            <img src="philippines.jpg" alt="">
-                            <div class="txt">
-                                <p>企業合作</p>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <img src="dubai.jpg" alt="">
-                        </div>
-                        <div class="col-3" id="change">
-                            <img src="philippines.jpg" alt="">
-                            <div class="txt">
-                                <p>歡迎來信</p>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <img src="dubai.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
+    <section class="job-banner">     
+        <img src="sec-banner.jpg" alt="">
+        <div class="banner-title"></div>    
     </section>
+    
     <section class="contact-us">
         <div class="container">
             <div class="row">
