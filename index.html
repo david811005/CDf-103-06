@@ -32,7 +32,7 @@
             width: 50px;
             height: 50px;
         }
-        .main-nav .col-2{
+        .main-nav .col-xl-2{
             margin-left: -15px;
         }
         .main-nav .logo img{
@@ -50,13 +50,13 @@
             text-decoration: none;
             color: white;
         }
-        .main-nav .col-2{
+        .main-nav .col-xl-2{
             margin-bottom: 0px;
         }
-        .main-nav .col-6{
+        .main-nav .col-xl-6{
             margin-bottom: 0px;
         }
-        .main-nav .col-4{
+        .main-nav .col-xl-4{
             margin-bottom: 0px;
             display: flex;
             justify-content: flex-end;
@@ -113,7 +113,7 @@
             font-size: 48px;
             padding-left: 100px;
         }
-        .main-banner .col-9{
+        .main-banner .col-xl-9{
             padding: 70px;         
         }
         .main-banner input{
@@ -336,76 +336,55 @@
         }
         .sec-banner{
             margin-top: 60px;
+            background:
+            linear-gradient(180deg, rgba(250, 250, 250, 0.9) 30%,transparent 70%),
+            url(clouds.jpg) no-repeat center /cover;
         }
         .sec-banner img{
             width: 100%;
             vertical-align: bottom;
             object-fit: cover;
         }
-        .sec-banner .container{    
-            background-color: #fff;
-        }
         .sec-banner .container>.row{
             flex-direction: column;
             align-items: center;
         }
-        .sec-banner .container .row .col-2{
+        .sec-banner .container .row .col-xl-2{
             display: flex;
             flex-direction: column;
             width: 100%;
         }
-        .sec-banner .container .row .col-2>h2{
+        .sec-banner .container .row .col-xl-2>h2{
             font-size: 48px;
             padding: 20px 30px;
             font-weight: 900;
             text-align: center;
         }
-        .sec-banner .banner-squ{
-            position: relative;
-        }
-        .sec-banner .banner-squ::before{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 250px;
-            border: 20px solid #ccc;
-            width: 100px;
-            height: 100px;
-        }
-        .sec-banner .banner-squ::after{
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 200px;
-            border: 20px solid #ccc;
-            width: 100px;
-            height: 100px;
-        }
-        .sec-banner .container .row .col-2>small{
+        .sec-banner .container .row .col-xl-2>small{
             font-size: 30px;
             padding-left:20%;
             font-weight: 700;
             text-align: center;
         }
-        .sec-banner .col-3 .item{
+        .sec-banner .col-xl-3 .item{
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
         }
-        .sec-banner .col-3 .item .pic{
+        .sec-banner .col-xl-3 .item .pic{
             width: 100px;
         }
-        .sec-banner .col-3 .item .pic img{
+        .sec-banner .col-xl-3 .item .pic img{
             width: 100%;
             vertical-align: bottom;
             object-fit: cover;
         }
-        .sec-banner .col-3 .item h3{
+        .sec-banner .col-xl-3 .item h3{
             padding-top: 60px;
             position: relative;
         }
-        .sec-banner .col-3:nth-child(1) h3:after{
+        .sec-banner .col-xl-3:nth-child(1) h3:after{
             content: 'Free';
             font-size: 30px;
             position: absolute;
@@ -413,7 +392,7 @@
             right: 15px;
             font-weight: 700;
         }
-        .sec-banner .col-3:nth-child(2) h3:after{
+        .sec-banner .col-xl-3:nth-child(2) h3:after{
             content: '1.2k';
             font-size: 30px;
             position: absolute;
@@ -421,7 +400,7 @@
             right: 15px;
             font-weight: 700;
         }
-        .sec-banner .col-3:nth-child(3) h3:after{
+        .sec-banner .col-xl-3:nth-child(3) h3:after{
             content: '95%';
             font-size: 30px;
             position: absolute;
@@ -429,7 +408,7 @@
             right: 10px;
             font-weight: 700;
         }
-        .sec-banner .col-3:nth-child(4) h3:after{
+        .sec-banner .col-xl-3:nth-child(4) h3:after{
             content: '95%';
             font-size: 30px;
             position: absolute;
@@ -444,16 +423,16 @@
             flex-direction: column;
             align-items: center;
         }
-        .main-footer .container .col-2{
+        .main-footer .container .col-xl-2{
             display: flex;
             width: 100%;
             justify-content: center;
           
         }
-        .main-footer .container .col-10{
+        .main-footer .container .col-xl-10{
             width: 100%;
         }
-        .main-footer .container .col-10 >.row{
+        .main-footer .container .col-xl-10 >.row{
             align-items: center;
             padding-top: 30px;
         }
@@ -483,6 +462,22 @@
             color:white;
             font-size: 12px;
         }
+        @media screen and (min-width:768px) {
+            .container{
+                margin: auto;
+            }
+        }
+        @media screen and (min-width:1024px) {
+            .container{
+                margin: auto;
+            }
+        }
+        @media screen and (min-width:1200px) {
+            .container{
+                margin: auto;
+            }
+        }
+
 
     </style>
 </head>
@@ -490,18 +485,18 @@
     <section class="main-nav">
         <div class="container">
             <div class="row">
-                <div class="col-2">
+                <div class="col-xl-2">
                     <div class="logo">
                         <a href="index.html"><img src="logo.png" alt=""></a>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-xl-6">
                     <a href="page3findjob.html">精選職缺</a>
                     <a href="page6blog.html">職場資源</a>
                     <a href="ourteam.html">關於我們</a>
                     <a href="page4contact.html">聯絡我們</a>
                 </div>
-                <div class="col-4">
+                <div class="col-xl-4">
                     <a href="page2chat.html">即時通訊</a>
                     <a href="#">會員</a>
                 </div>
@@ -512,13 +507,13 @@
     <section class="main-banner">
         <div class="container">
             <div class="row">
-                <div class="col-9">
+                <div class="col-xl-9 col-lg-6 col-md-12">
                     <div class="txt">
                             <h3>追逐夢想的路上</h3>
                             <small>讓Target助你一臂之力！</small>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-xl-3 col-lg-6 col-md-12">
                     <div class="search">
                         <form action="#">
                             <label for="jobsearch">職缺：</label>
@@ -538,9 +533,9 @@
         <div class="container">
             <h2>精選職缺</h2>
             <div class="row">
-                <div class="col-12">
+                <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-xl-4 col-lg-6 col-md-12">
                             <div class="item-dubi">
                                 <div class="pic">
                                     <img src="dubai.jpg" alt="">
@@ -568,7 +563,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-xl-4 col-lg-6 col-md-12">
                             <div class="item-singapo">
                                 <div class="pic">
                                     <img src="singapo.jpg" alt="">
@@ -595,7 +590,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-xl-4 col-lg-6 col-md-12">
                             <div class="item-outdoor">
                                 <div class="pic">
                                     <img src="philippines.jpg" alt="">
@@ -630,14 +625,14 @@
     <section class="main-about">
         <div class="container">
             <div class="row">
-                <div class="col-8">
+                <div class="col-xl-8 col-lg-6 col-md-12">
                     <div class="txt">
                         <img src="teenage.jpg" alt="">
                         <h2>From 一位奮鬥中的青年 D</h2>
                             <p>現在的我，正在杜拜國際機場的一間泰式餐廳 CHO GAO，離搭乘早上4:45分往台北的班機還有2個小時，每次到杜拜轉機，深夜肚子總會莫名的餓，需要找間餐廳好好解飢。這次又是一個人來這裡轉機，其實心情有些起伏，很大的對比。 三年前，我也搭乘同一班班機從阿姆斯特丹前往杜拜，機。那時候，我當時很開心找到新工作，是我理想中的工作的班機上，當許多乘客都在熟睡時，打開我的筆電，認一條都看懂，並且寫下想對人資聯絡窗口的問題，因為馬虎。「沒有去嘗試，就永遠不知道自己的能力在哪裡，也不知道自己能否勝任。」雖然接下這份荷蘭第一份正職作前，其實猶豫很久，多次的討論，因為擔心自己無法勝任這份工作，但最因無它，因為「沒有去嘗試，就永遠不知道自己的能自己能否勝任」。 經過快三年，這份工作也很上手了，經理也開始交待只是很簡單的結帳，但還是和目前做的事情有很大的不一樣的東西。目前這份工作，讓我面對許多來自不同國家的同事，有南至非洲，東至俄羅斯，而西至英國，不少同事的工作經驗都比我豐富許多，但因為我是在歐洲區域總部工作，所以可以看到整個市場的內容，而不是單單只有一個國家市場而已，但工作壓力也不小，財務部每個月有月結，總是讓我心臟快停止了，這份工作溝通協調能力很重要，通常別人的錯誤，會讓整個報表都錯，但我是要對這份報表負責的。...<a href="#">More</a></p> 
                     </div>
                 </div>
-                <div class="col-4 con-tit">
+                <div class="col-xl-4 col-lg-6 col-md-12 con-tit">
                     <div class="title">
                         <h2>海外工作文章分享</h2>  
                     </div>   
@@ -648,13 +643,13 @@
     <section class="sec-banner">   
         <div class="container">
             <div class="row">
-                <div class="col-2 banner-squ">
+                <div class="col-xl-2 col-lg-2 col-md-2 banner-squ">
                     <h2>Do you want a job?</h2>
                     <small>Start chat with us!</small>
                 </div>
-                        <div class="col-10">
+                        <div class="col-xl-10 col-lg-10 col-md-10">
                             <div class="row">
-                                <div class="col-3">
+                                <div class="col-xl-3 col-lg-3 col-md-6">
                                     <div class="item">
                                         <div class="pic">
                                             <img src="use1.png" alt="">
@@ -664,7 +659,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-xl-3 col-lg-3 col-md-3">
                                     <div class="item">
                                         <div class="pic">
                                             <img src="use2.png" alt="">
@@ -674,7 +669,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-xl-3 col-lg-3 col-md-3">
                                     <div class="item">
                                         <div class="pic">
                                             <img src="use4.png" alt="">
@@ -684,7 +679,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-xl-3 col-lg-3 col-md-3">
                                     <div class="item">
                                         <div class="pic">
                                             <img src="use3.png" alt="">
@@ -704,9 +699,9 @@
     <section class="main-footer">
         <div class="container">
             <div class="row">
-                <div class="col-10">
+                <div class="col-xl-10 col-lg-10 col-md-10">
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-xl-4 col-lg-6 col-md-6">
                             <div class="item-logo">
                                 <h3>Target Job人力資源有限公司</h3>
                                 <ul>
@@ -717,9 +712,9 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-8">
+                        <div class="col-xl-8 col-lg-6 col-md-6">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-xl-4 col-lg-4 col-4">
                                     <div class="item">
                                         <h3>搜尋職缺</h3>
                                         <ul>
@@ -729,7 +724,7 @@
                                          </ul>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="ccol-xl-4 col-lg-4 col-4">
                                     <div class="item">
                                         <h3>職場資源</h3>
                                         <ul>
@@ -739,7 +734,7 @@
                                          </ul>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-xl-4 col-lg-4 col-4">
                                     <div class="item">
                                         <h3>追蹤我們</h3>
                                         <ul>
@@ -756,7 +751,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-2">
+                <div class="col-xl-2 col-lg-2 col-md-2">
                     <div class="copy">
                         copyright &copy; 2021 Target Job Human Resource Co.,Ltd. All Rights Reserved.
                     </div>
