@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        html,body{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .chatbox .chat{
+            width: 100%;
+            height: 300px;
+            box-shadow:  0 0 10px #afb1b3;
+            background-color: #f4f5f7;
+        }
+        .chatbox .user{
+            display: flex;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .chatbox .local{
+            justify-content: flex-end;
+        }
+        .chatbox .user .picbox{
+            width: 60px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .chatbox .user .pic{
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+        }
+        .chatbox .user img{
+            width: 100%;
+            vertical-align: bottom;
+        }
+        .chatbox .user .txt{
+            background-color: #aaa;
+            padding: 16px;
+            border-radius: 10px;
+        }
+        .chatbox .remote .txt{
+            margin-left: 20px;
+            margin-right: 80px;
+            background-color: #f7bfa1;
+            position: relative;
+        }
+        .chatbox .local .txt{
+            margin-right: 20px;
+            margin-left: 80px;
+            order: -1;
+            background-color: #aec7bb;
+            position: relative;
+        }
+        .chatbox .remote .txt::before{
+            content:'' ;
+            position: absolute;
+            top: 30px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #f7bfa1;
+            left: -5px;
+            transform: rotate(-5deg);
+        }
+        .chatbox .local .txt::before{
+            content:'' ;
+            position: absolute;
+            top: 30px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #aec7bb;
+            right:-5px;
+            transform: rotate(-5deg);
+        }
+        .chatbox .form{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 50px;
+            box-shadow:  0 0 10px #afb1b3;
+            border-radius: 0 0 5px 5px;
+            
+        }
+        .chatbox .form :first-child{
+            border-radius: 200px 0px 0px 200px;
+            width: 200px;
+            padding: 5px;
+            font-size: 14px;
+            border: none;
+            background-color: rgb(255, 255, 255);
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            border-right: none;
+        }
+        .chatbox input::-webkit-input-placeholder{
+            font-size: 14px;
+        }
+        .chatbox .form :nth-child(2){
+            width: 60px;
+            padding: 3px;
+            border-right: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            border-left: none;
+            background-color: rgb(255, 255, 255);
+            border-radius: 0px 200px 200px 0px;
+            margin-right: 10px;
+            color: #4a90e2;
+            font-size: 14px;
+            cursor: pointer;
+
+        }
+        
+        .chatbox input:focus{
+            outline: none;
+        }
+        .chat{
+            overflow: scroll;
+            height: 300px;
+        }
+        .chat-head{
+            width: 100%;
+            text-align: center;
+            box-shadow:  0 0 10px #afb1b3;
+            border-radius: 5px 5px 0 0;
+            padding: 10px 0px;
+            position: relative;
+        }
+        .chatbox .chat-head .pic{
+            width: 80px;
+            margin: -40px auto 0;
+            line-height: 20px;
+            object-fit: cover;
+            
+        }
+        .chatbox .chat-head .pic img{
+            width: 100%;
+            border-radius: 50%;
+        }
+        .chatbox{
+            padding-top: 40px;
+            width: 400px;
+        }
+        .chatbox .local .txt .timeHm {
+            color: #aaa;
+            font-size: 12px;
+            position: absolute;
+            bottom: -20px;
+            right: 10px;
+        }
+        .chatbox .remote .txt .timeHm {
+            color: #aaa;
+            font-size: 12px;
+            position: absolute;
+            bottom: -20px;
+            left: 10px;
+        }
+        .chatbox .close{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbox" class="chatbox">
+        <div class="chat-head">
+            <div id="close" class="close">
+                <img src="cross.png" alt="">
+            </div>
+            <div class="pic">
+                <img src="team1.jpg" alt="">
+            </div>
+            <div class="headname">
+                <h2>Mike Yu</h2>
+            </div>
+            <span>
+                Target Job 諮詢經理
+            </span>
+        </div>
+        <div id="cbox" class="chat">
+            <!-- <div id="remote" class="user remote">
+                <div class="picbox">
+                    <div class="pic">
+                        <img src="team1.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        顧問
+                    </div>
+                </div>
+        
+                <div class="txt">
+                    ssss
+                    <div class="timeHm">200</div>
+                </div>
+            </div>
+        
+            <div id="local" class="user local">
+                <div class="picbox">
+                    <div class="pic">
+                        <img src="team2.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        Ｍike
+                    </div>
+                </div>
+        
+                <div class="txt">
+                   sss
+                   <div class="timeHm">200</div>
+                </div>
+            </div> -->
+        </div>
+        <div class="form">
+            <input id="content" type="text" placeholder="請輸入您的問題...">
+            <button id="btn" type="submit">發送</button>
+        </div>
+    </div>
+
+    <script>
+        var content = document.getElementById("content");
+        var box = document.getElementById("cbox");
+        var remote = document.getElementById("remote");
+        var local = document.getElementById("local");
+        var scollDown = document.getElementById("scollDown");
+        var time = new Date();
+        var h = time.getHours();
+        var m = time.getMinutes();
+        var qa = [
+            "您好",
+            "掰掰",
+            "杜拜是阿拉伯聯合大公國人口最多的城市，也是中東地區的經濟和金融中心。",
+            "菲律賓擁有七千多個大小島嶼。長灘島有亞洲最美沙灘美譽，沙質細膩潔白，海水清澈透明。",
+            "美國阿豆仔很多的地方",
+            "冷知識，你知道嗎？日本有很多日本人",
+            "大象的媽媽是猩猩,因為相由心生",
+            "薏仁被趕出家門，街頭藝人",
+            "電腦不快樂，因為他有Ｄ槽（低潮",
+            "有一根牙籤走在路上，看到刺蝟，牙籤：啊～公車來了",
+            "我早上看時間，不是為了起床，是為了看還可以睡多久",
+            "少給我臉色看，以為自己是調色盤？",
+            "你是不是太無聊？想跟我聊天？",
+            "你知道嗎？佛地魔超有主見，因為他不會被牽著鼻子走",
+            "把外勞關在家，猜一個地名，Ａ：索馬利亞",
+            "一條褲子可以穿20年，猜地名，Ａ神奈川",
+            "你知道嗎？吃完鮭魚會肚子痛，因為鮭魚在胃食道逆流",
+         ];
+        function keyEnter(){
+            if(window.event.keyCode==13){
+                check();
+            }
+        }
+        function timecon(){
+            setTimeout("answer()",1000);
+        }
+        function answer(){
+            let n = qa.length;
+            let r = parseInt(n*Math.random());
+            box.innerHTML = box.innerHTML + `
+            <div id="remote" class="user remote">
+                <div class="picbox">
+                    <div class="pic">
+                        <img src="team1.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        Mike
+                    </div>
+                </div>
+        
+                <div class="txt">
+                    ${qa[r]}\n
+                    <div class="timeHm">${h}:${m}</div>
+                </div>
+            </div>
+            `;
+            box.scrollTop = box.scrollHeight;
+            
+            
+        }
+        function check(){
+            if(content.value.length>0){
+            box.innerHTML = box.innerHTML + `
+            <div id="local" class="user local">
+                <div class="picbox">
+                    <div class="pic">
+                        <img src="team2.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        Roy
+                    </div>
+                </div>
+        
+                <div class="txt">
+                    ${content.value}\n
+                    <div class="timeHm">${h}:${m}</div>
+                </div>
+            </div>
+        
+            `;
+
+            content.value ="";
+            box.scrollTop = box.scrollHeight;
+            timecon();
+            // setTimeout("answer()",1000);
+            }
+        };
+        function init(){
+            document.getElementById("btn").onclick = check;
+            document.onkeypress = keyEnter;
+        };
+        window.addEventListener("load",init,false);
+    </script>
+</body>
+</html>
