@@ -86,43 +86,41 @@
             transform: rotate(-5deg);
         }
         .chatbox .form{
-            width: 100%;
+            /* width: 100%; */
             display: flex;
             align-items: center;
             justify-content: flex-end;
             height: 50px;
             box-shadow:  0 0 10px #afb1b3;
             border-radius: 0 0 5px 5px;
+            padding-right: 10px;
             
         }
-        .chatbox .form :first-child{
+        .chatbox .form .element{
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+        }
+        .chatbox .form input{
             border-radius: 200px 0px 0px 200px;
             width: 200px;
             padding: 5px;
             font-size: 14px;
             border: none;
             background-color: rgb(255, 255, 255);
-            border-left: 1px solid #ccc;
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-            border-right: none;
         }
         .chatbox input::-webkit-input-placeholder{
             font-size: 14px;
         }
         .chatbox .form :nth-child(2){
             width: 60px;
-            padding: 3px;
-            border-right: 1px solid #ccc;
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
+            padding: 5px;
             border-left: none;
-            background-color: rgb(255, 255, 255);
-            border-radius: 0px 200px 200px 0px;
-            margin-right: 10px;
+            background-color: transparent;
             color: #4a90e2;
             font-size: 14px;
             cursor: pointer;
+            border: 0;
 
         }
         
@@ -191,7 +189,7 @@
                 <img src="team1.jpg" alt="">
             </div>
             <div class="headname">
-                <h2>Mike Yu</h2>
+                <h2>曾彥凱</h2>
             </div>
             <span>
                 Target Job 諮詢經理
@@ -231,8 +229,10 @@
             </div> -->
         </div>
         <div class="form">
-            <input id="content" type="text" placeholder="請輸入您的問題...">
-            <button id="btn" type="submit">發送</button>
+            <div class="element">
+                <input id="content" type="text" placeholder="請輸入您的問題...">
+                <button id="btn" type="submit">發送</button>
+            </div>
         </div>
     </div>
 
@@ -282,7 +282,7 @@
                         <img src="team1.jpg" alt="">
                     </div>
                     <div class="name">
-                        Mike
+                        Ian
                     </div>
                 </div>
         
