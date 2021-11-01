@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gird.css">
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .job h2{
+            text-align: center;
+            font-size: 36px;
+            margin: 60px;
+        }
+        .job .pic img{
+            width: 100%;
+            vertical-align: middle;
+            object-fit: cover;
+            opacity: 0.5;
+            transition: 1s;
+        }
+        .job .item-dubi .pic{
+            position: relative;
+        }
+        .job .item-dubi .pic::after{
+            content: '杜拜工作';
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            color: #fff;
+            font-size: 26px;
+        }
+        .job .item-singapo .pic{
+            position: relative;
+        }
+        .job .item-singapo .pic::after{
+            content: '新加坡工作';
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            color: #fff;
+            font-size: 26px;
+        }
+        .job .item-outdoor .pic{
+            position: relative;
+        }
+        .job .item-outdoor .pic::after{
+            content: '澳門工作';
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            color: #fff;
+            font-size: 26px;
+        }
+        .job .pic img:hover{
+            opacity: 1;
+        }
+       .job .pic{
+           width: 370px;
+       }
+       .job .txt{
+           padding: 1em 0px;
+           
+       }
+       .job .txt .job-link{
+           position: relative;
+           padding: 15px 0px;
+           
+                  
+       }
+       .job .txt .job-link a{
+           text-decoration: none;
+           color: #000;
+       }
+       .job .txt .job-link::after{
+           content: '2021年10月7日';
+           position: absolute;
+           top: -5px;
+           left: 0px;
+           font-size: 14px;
+           color: #aaa;
+       }
+       .job .txt .job-link::before{
+           content: '';
+           border-bottom: solid 1px #aaa;
+           position: absolute;
+           bottom: 8px;
+           left: 0;
+           width: 90%;
+           height: 0%;
+       }
+       .job .btn{
+           text-align: center;
+       }
+       .job .btn button{
+           display: inline-block;
+           padding: 15px 30px;
+           text-align: center;
+           background-color: #555;
+           color: #fff;
+           border-radius: 10px;
+           font-size: 12px;
+           text-decoration: none;
+           
+       }
+      
+        
+    </style>
+</head>
+<body>
+    <section class="job">
+        <h2>精選職缺</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="item-dubi">
+                        <div class="pic">
+                            <img src="https://picsum.photos/500/400?random=90" alt="">
+                        </div>
+                        <div class="txt">
+                            <div class="job-link">
+                                <a href="#">【杜拜】載你飛航空-機師</a>
+                            </div>
+                            <div class="job-link">
+                                <a href="#">【杜拜】載你飛航空-地勤</a>
+                            </div>
+                            <div class="job-link">
+                                <a href="#">【杜拜】載你飛航空-免稅銷售</a>
+                            </div>
+                            <div class="job-link">
+                                <a href="#">【杜拜】管理諮詢有限公司-審計專員</a>
+                            </div>
+                            <div class="job-link">
+                                <a href="#">【杜拜】管理諮詢有限公司-審計主管</a>
+                            </div>                           
+                        </div>
+                        <div class="btn">
+                            <button>查看更多職缺</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="item-singapo">
+                        <div class="pic">
+                            <img src="https://picsum.photos/500/400?random=90" alt="">
+                        </div>
+                        <div class="txt">
+                            <div class="job-link">
+                                <a href="#">【新加坡】好吃一直吃集團-外場服務生</a>
+                            </div>
+                            <div class="job-link">
+                                <a href="#">【新加坡】好吃一直吃集團-廚房助理</a>
+                            </div>
+                            <div class="job-link">
+                                <a href="#">【新加坡】好醫一直醫中醫-助理人員</a>
+                            </div>
+                            <div class="job-link">
+                                <a href="#">【新加坡】好醫一直醫中醫-中醫師</a>
+                            </div>
+                            <div class="job-link">
+                                <a href="#">【新加坡】好醫一直醫中醫-護理士</a>
+                            </div>                           
+                        </div>
+                        <div class="btn">
+                            <button>查看更多職缺</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="item-outdoor">
+                        <div class="pic">
+                            <img src="https://picsum.photos/500/400?random=90" alt="">
+                        </div>
+                        <div class="txt">
+                            <div class="job-link">
+                                <a href="#">【澳門】輸光光渡假酒店-賭場公關</a>
+                            </div>
+                            <div class="job-link">
+                                <a href="#">【澳門】輸光光渡假酒店-帳房人員</a>
+                            </div>
+                            <div class="job-link">
+                                <a href="#">【澳門】輸光光渡假酒店-迎賓大使</a>
+                            </div>
+                            <div class="job-link">
+                                <a href="#">【澳門】輸光光渡假酒店-主管司機</a>
+                            </div>
+                            <div class="job-link">
+                                <a href="#">【澳門】輸光光渡假酒店-清潔人員</a>
+                            </div>                           
+                        </div>
+                        <div class="btn">
+                            <button>查看更多職缺</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+            
+    </section>
+    
+</body>
+</html>

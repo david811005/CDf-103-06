@@ -19,57 +19,7 @@
             position: relative;
             margin-top: 70px;
         }
-        .main-nav{
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 5;
-        }
-        .main-nav .logo{
-            width: 50px;
-            height: 50px;
-        }
-        .main-nav .col-2{
-            margin-left: -15px;
-        }
-        .main-nav .logo img{
-            width: 100%;
-            object-fit: cover;
-            vertical-align: bottom;
-
-        }
-        .main-nav .container .row{
-            align-items: center;
-            padding: 10px 0px;
-        }
-        .main-nav a{
-            padding-left: 10px;
-            text-decoration: none;
-            color: white;
-        }
-        .main-nav .col-2{
-            margin-bottom: 0px;
-        }
-        .main-nav .col-6{
-            margin-bottom: 0px;
-        }
-        .main-nav .col-4{
-            margin-bottom: 0px;
-            display: flex;
-            justify-content: flex-end;
-            margin-left: 15px;
-        }
-        .job-con{
-            background-image: url(rightstar.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
-            object-fit: cover;
-        }
+       
         .job-con h3,
         .job-con li{
             padding-bottom: 10px 0px;
@@ -77,6 +27,7 @@
         .job-con .job-how ul{
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
         .job-con .job-how ul li{
             padding: 10px;
@@ -94,7 +45,7 @@
             position: relative;
         }
         .job-con .job-name::before{
-            content: url(star.png);
+            content: url(star1.png);
             display: block;
             width: 30px;
             height: 30px;
@@ -133,6 +84,9 @@
             background-color:rgba(255, 0, 0, .4);
             border: none;
             border-radius: 10px;
+            padding: 10px;
+            font-weight: 600;
+            cursor: pointer;
         }
         .job-con .path{
             padding: 10px;
@@ -154,6 +108,10 @@
             color: #aaa;
         }
         .sec-banner{
+            background:
+                    url(tecbac.png) no-repeat top left /cover,
+                    url(tecbac.png) no-repeat bottom right /cover;
+            overflow: hidden; 
             margin-top: 60px;
         }
         .sec-banner img{
@@ -164,94 +122,114 @@
         .sec-banner .container{    
             background-color: #fff;
         }
-        .sec-banner .container>.row{
+        /* .sec-banner .container .sec-conrow{
             flex-direction: column;
             align-items: center;
-        }
-        .sec-banner .col-10{
-            width: 100%;
-        }
-        .sec-banner .container .row .col-2{
+        } */
+        /* .sec-banner .container .row .sec-conrow{
             display: flex;
             flex-direction: column;
             width: 100%;
-        }
-        .sec-banner .container .row .col-2>h3{
-            font-size: 48px;
-            padding: 20px 30px;
-            font-weight: 700;
-        }
-        .sec-banner .container .row .col-2>small{
+        } */
+        .sec-banner .container .sec-conrow h3{
             font-size: 30px;
-            padding-left: 200px;
-            font-weight: 300;
+            font-weight: 700;
+            text-align: center;
         }
-        .sec-banner .col-3 .item{
+        .sec-banner .container .sec-conrow small{
+            font-size: 24px;
+            font-weight: 300;
+            padding-top: 10px;
+            display: block;
+            text-align: center;
+        }
+        .sec-banner .container .sec-conrow{
+            justify-content: center;
+            align-items: center;
+        }
+        .sec-banner .item{
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
         }
-        .sec-banner .col-3 .item .pic{
-            width: 100px;
+        .sec-banner .item .pic{
+            width: 80px;
         }
-        .sec-banner .col-3 .item .pic img{
+        .sec-banner .item .pic img{
             width: 100%;
             vertical-align: bottom;
             object-fit: cover;
             border-radius: 50%;
         }
-        .sec-banner .col-3 .item h3{
-            padding-top: 60px;
+        .sec-banner .conitem .item h3{
+            margin-top: 50px;
             position: relative;
+            font-size: 20px;
+            border-bottom: none;
+
         }
-        .sec-banner .col-3:nth-child(1) h3:after{
+        .sec-banner .conitem:nth-child(1) h3:after{
             content: 'Free';
             font-size: 30px;
             position: absolute;
-            top: 15px;
-            right: 15px;
+            bottom: 140%;
+            right: 30px;
         }
-        .sec-banner .col-3:nth-child(2) h3:after{
+        .sec-banner .conitem:nth-child(2) h3:after{
             content: '1.2k';
             font-size: 30px;
             position: absolute;
-            top: 15px;
-            right: 15px;
+            bottom: 140%;
+            right: 30px;
         }
-        .sec-banner .col-3:nth-child(3) h3:after{
+        .sec-banner .conitem:nth-child(3) h3:after{
             content: '95%';
             font-size: 30px;
             position: absolute;
-            top: 15px;
-            right: 10px;
+            bottom:140%;
+            right: 25px;
         }
-        .sec-banner .col-3:nth-child(4) h3:after{
+        .sec-banner .conitem:nth-child(4) h3:after{
             content: '95%';
             font-size: 30px;
             position: absolute;
-            top: 15px;
-            right: 10px;
+            bottom:140%;
+            right: 25px;
+        }
+        .sec-banner button{
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.664);
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #aec7bb;
+        }
+        .sec-banner .btn{
+            padding-top: 20px;
+            display: block;
+            text-align: center;
+            
         }
         .main-footer{
             background-color: black;
         }
-        .main-footer .container >.row{
+        /* .main-footer .container >.row{
             flex-direction: column;
             align-items: center;
-        }
-        .main-footer .container .col-2{
+        } */
+        .main-footer .container .copycon{
             display: flex;
             width: 100%;
             justify-content: center;
           
         }
-        .main-footer .container .col-10{
-            width: 100%;
-        }
-        .main-footer .container .col-10 >.row{
+        .main-footer .container .conheigh{
             align-items: center;
-            padding-top: 30px;
+            padding-top: 40px;
+            margin-bottom: -40px;
         }
         .main-footer .container .item h3{
             font-size: 14px;
@@ -279,32 +257,38 @@
             color:white;
             font-size: 12px;
         }
+        .main-footer .conitem{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-footer .hide{
+            display: none;
+        }
+       
+       
+        @media screen and (min-width:768px){
+            .job-con{
+            background-image: url(rightstar1.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: right;
+            background-attachment: fixed;
+            object-fit: cover;
+            }
+        } 
+        @media screen and (min-width:1024px) {
+            .main-footer .hide{
+            display: inline-block;
+            }
+        }
+       
+       
 
     </style>
 </head>
 <body>
-    <section class="main-nav">
-        <div class="container">
-            <div class="row">
-                <div class="col-2">
-                    <div class="logo">
-                        <a href="index.html"><img src="logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <a href="page3findjob.html">精選職缺</a>
-                    <a href="page6blog.html">職場資源</a>
-                    <a href="ourteam.html">關於我們</a>
-                    <a href="page4contact.html">聯絡我們</a>
-                </div>
-                <div class="col-4">
-                    <a href="page2chat.html">即時通訊</a>
-                    <a href="#">會員</a>
-                </div>
-            </div>
-        </div>
-
-    </section>
+    
     <section class="job-con">
         <div class="container">
             <div class="row">
@@ -314,11 +298,15 @@
                         <a href="#">菲律賓</a>
                         <a href="#">資訊軟體</a>
                         <a href="#">正職</a>
-                        <a href="page3findjob.html">回上一頁</a>
+                        <a href="rwdfindjob.html">回上一頁</a>
                     </div>
+                </div>
+                <div class="col-12">
                     <div class="job-name">
                         <h2>前端工程師</h2>
                     </div>
+                </div>
+                <div class="col-12">
                     <div class="job-how">
                         <ul>
                             <li>提供食宿</li>
@@ -329,90 +317,108 @@
                             <li>生日禮金</li>
                         </ul>
                     </div>
+                </div>
+                <div class="col-12">
                     <div class="work-place">
                         <span>工作地點:</span>
                         <span>菲律賓</span>
                     </div>
+                </div>
+                <div class="col-12">
                     <div class="work-place">
                         <span>工作性質:</span>
                         <span>正職</span>
                     </div>
+                </div>
+                <div class="col-12">
                     <div class="work-txt">
                         <h3>工作內容:</h3>
                         <ul>
-                            <li>負責公司網站、後台管理系統、MobileWeb、Hybrid App的日常開發及維護。</li>
+                            <li>負責公司網站、後台管理系統、MobileWeb、Hybrid App的日常發及維護。</li>
                             <li>依據需求跟產品經理溝通完成產品需求。</li>
                             <li>根據UI設計完成前端介面開發。</li>
                             <li>與後端工程師做API對接。</li>
-                            <li>持續優化前端介面體驗及頁面響應速度，保證其相容性及執行效率，隨時排除技術難題。</li>
+                            <li>持續優化前端介面體驗及頁面響應速度，保證其相容性及執行效率，時排除技術難題。</li>
                             <li>完成主管其他交辦事項。</li>
                         </ul>
                     </div>
+                </div>
+                <div class="col-12">
                     <div class="work-pos">
                         <h3>應徵條件:</h3>
                         <ul>
                             <li>緯育Tibame畢業的學生。</li>
-                            <li>熟悉前端開發技術 HTML/ HTML5、CSS/CSS3、JS、jQuery。。</li>
-                            <li>熟悉H5+、vue、react等主流框架的設計，且須精通至少其中一種。</li>
+                            <li>熟悉前端開發技術 HTML/ HTML5、CSS/CSS3、JS、jQuery。。<li>
+                            <li>熟悉H5+、vue、react等主流框架的設計，且須精通至少其中一種</li>
                             <li>工作認真，有責任心，具備良好團隊溝通與協作能力。</li>
                             <li>學習能力強，能快速掌握新的開發技術。</li>
                         </ul>
                     </div>
+                </div>
+                <div class="col-12">
                     <div class="work-pay">
                         <span>薪資:</span>
                         <span>NT $ 90k up</span>
                     </div>
+                </div>
+                <div class="col-12">
                     <div class="work-time">
                         <span>張貼日期: 2020/10/10</span>
                     </div>
+                </div>
+                <div class="col-12 btn">
                     <input type="button" value="我要應徵">
                 </div>
+            
             </div>
         </div>
     </section>
     <section class="sec-banner">   
         <div class="container">
-            <div class="row">
-                <div class="col-2">
+            <div class="row sec-conrow">
+                <div class="col-12 col-lg-4">
                     <h3>Do you want a job?</h3>
                     <small>Start chat with us!</small>
+                    <div class="btn" id="secBtn">
+                        <button>開始即時通訊</button>
+                    </div>
                 </div>
-                        <div class="col-10">
+                        <div class="col-12 col-lg-8">
                             <div class="row">
-                                <div class="col-3">
+                                <div class="conitem col-lg-3 col-6">
                                     <div class="item">
                                         <div class="pic">
-                                            <img src="user.png" alt="">
+                                            <img src="secf02.png" alt="">
                                         </div>
                                         <div class="txt">
                                             <h3>求職服務費</h3>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="conitem col-lg-3 col-6">
                                     <div class="item">
                                         <div class="pic">
-                                            <img src="user01.png" alt="">
+                                            <img src="secf04.png" alt="">
                                         </div>
                                         <div class="txt">
                                             <h3>網站用戶數</h3>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="conitem col-lg-3 col-6">
                                     <div class="item">
                                         <div class="pic">
-                                            <img src="user02.png" alt="">
+                                            <img src="secf03.png" alt="">
                                         </div>
                                         <div class="txt">
                                             <h3>成功求職率</h3>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="conitem col-lg-3 col-6">
                                     <div class="item">
                                         <div class="pic">
-                                            <img src="user03.png" alt="">
+                                            <img src="secf01.png" alt="">
                                         </div>
                                         <div class="txt">
                                             <h3>服務滿意度</h3>
@@ -429,9 +435,9 @@
     <section class="main-footer">
         <div class="container">
             <div class="row">
-                <div class="col-10">
-                    <div class="row">
-                        <div class="col-4">
+                <div class="col-12 col-xl-12">
+                    <div class="row conheigh">
+                        <div class="col-12 col-lg-4 col-xl-4 conitem">
                             <div class="item-logo">
                                 <h3>Target Job人力資源有限公司</h3>
                                 <ul>
@@ -442,9 +448,9 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-8">
+                        <div class="col-12 col-lg-8 col-xl-8">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="hide col-4 col-lg-4 col-xl-4">
                                     <div class="item">
                                         <h3>搜尋職缺</h3>
                                         <ul>
@@ -454,7 +460,7 @@
                                          </ul>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="hide col-4 col-lg-4 col-xl-4">
                                     <div class="item">
                                         <h3>職場資源</h3>
                                         <ul>
@@ -464,7 +470,7 @@
                                          </ul>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="hide col-4 col-lg-4 col-xl-4">
                                     <div class="item">
                                         <h3>追蹤我們</h3>
                                         <ul>
@@ -481,7 +487,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-2">
+                <div class="col-12 col-xl-12 copycon">
                     <div class="copy">
                         copyright &copy; 2021 Target Job Human Resource Co.,Ltd. All Rights Reserved.
                     </div>
@@ -489,6 +495,7 @@
             </div>
         </div>
     </section>
+    
 
 </body>
 </html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gird.css">
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .main-banner .container{
+            margin: auto;
+            background: url(https://picsum.photos/1200/400?random=90) no-repeat center /cover;
+            position: relative;
+            overflow: hidden; 
+        }
+        .main-banner .container::after{
+            content: '';
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            background-color: white;
+            position: absolute;
+            bottom: -150px;
+            right: -150px;
+        }
+        .main-banner .container::before{
+            content: '';
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            background-color: white;
+            position: absolute;
+            top: -150px;
+            right: -150px;
+        }
+        .main-banner .row{
+            flex-direction: column;
+        }
+        .main-banner .search{
+            width: 250px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 40px #000;
+            backdrop-filter: blur(5px);
+            border-radius: 3px;
+        }
+        .main-banner .txt{
+            color: #fff;
+        }
+        .main-banner h3{
+            font-size: 56px;
+        }
+        .main-banner small{
+            font-size: 48px;
+            padding-left: 100px;
+        }
+        .main-banner .col-9{
+            padding: 70px;         
+        }
+        .main-banner input{
+            width: 100%;
+            outline: none;
+            font-size: 13px;
+            padding: 8px 0px;
+            display: inline-block;   
+        }
+        .main-banner label{
+            line-height:2;
+            font-size: 14px;
+            outline: none;
+            
+        }
+        .main-banner button{
+            margin-top: 10px;
+            padding: 5px 5px;
+        }
+        
+
+       
+    </style>
+</head>
+<body>
+    <section class="main-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    <div class="txt">
+                            <h3>追逐夢想的路上</h3>
+                            <small>讓Target助你一臂之力！</small>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="search">
+                        <form action="#">
+                            <label for="jobsearch">職缺：</label>
+                            <input type="text" id="jobsearch" placeholder=" 請輸入您想找的職缺">
+                        </form>
+                        <form action="#">
+                            <label for="consearch">國家：</label>
+                            <input type="text" id="consearch" placeholder=" 請輸入您想找的國家">
+                        </form>
+                        <div><button>搜尋</button></div>
+                    </div>           
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

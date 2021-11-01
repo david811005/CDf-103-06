@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gird.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700;900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700;900&display=swap');
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+        *{
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        /* body{
+            position: relative;
+            margin-top: 70px;
+        } */
+        /* .pic-fixedchat{
+            position: fixed;
+            bottom: 100px;
+            right: -40px;
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .pic-fixedchat::before{
+            content: '＼即時聊天／';
+            position: absolute;
+            top: -15px;
+            left: -10px;
+        }
+        .pic-fixedchat img{
+            width: 60%;
+        } */
+        .chatbox{
+            position: fixed;
+            bottom: 100px;
+            right: 0;
+            z-index: 1000;
+            display: none;
+
+        }
+        .chatbox .chat-head{
+            background-color: #ffffff;
+        }
+        .chatbox .chat{
+            width: 100%;
+            height: 300px;
+            box-shadow:  0 0 10px #afb1b3;
+            background-color: #f4f5f7;
+        }
+        .chatbox .user{
+            display: flex;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .chatbox .local{
+            justify-content: flex-end;
+        }
+        .chatbox .user .picbox{
+            width: 60px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .chatbox .user .pic{
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+        }
+        .chatbox .user img{
+            width: 100%;
+            vertical-align: bottom;
+        }
+        .chatbox .user .txt{
+            background-color: #aaa;
+            padding: 16px;
+            border-radius: 10px;
+        }
+        .chatbox .remote .txt{
+            margin-left: 20px;
+            margin-right: 80px;
+            background-color: #f7bfa1;
+            position: relative;
+        }
+        .chatbox .local .txt{
+            margin-right: 20px;
+            margin-left: 80px;
+            order: -1;
+            background-color: #aec7bb;
+            position: relative;
+        }
+        .chatbox .remote .txt::before{
+            content:'' ;
+            position: absolute;
+            top: 30px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #f7bfa1;
+            left: -5px;
+            transform: rotate(-5deg);
+        }
+        .chatbox .local .txt::before{
+            content:'' ;
+            position: absolute;
+            top: 30px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #aec7bb;
+            right:-5px;
+            transform: rotate(-5deg);
+        }
+        .chatbox .form{
+            /* width: 100%; */
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 50px;
+            box-shadow:  0 0 10px #afb1b3;
+            border-radius: 0 0 5px 5px;
+            padding-right: 10px;
+            background-color: #ffffff;
+            
+        }
+        .chatbox .form .element{
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+        }
+        .chatbox .form input{
+            border-radius: 200px 0px 0px 200px;
+            width: 200px;
+            padding: 5px;
+            font-size: 14px;
+            border: none;
+            background-color: #fff;
+        }
+        .chatbox input::-webkit-input-placeholder{
+            font-size: 14px;
+        }
+        .chatbox .form :nth-child(2){
+            width: 60px;
+            padding: 5px;
+            border-left: none;
+            background-color: transparent;
+            color: #4a90e2;
+            font-size: 14px;
+            cursor: pointer;
+            border: 0;
+
+        }
+        
+        .chatbox input:focus{
+            outline: none;
+        }
+        .chat{
+            overflow: scroll;
+            height: 300px;
+        }
+        .chat-head{
+            width: 100%;
+            text-align: center;
+            box-shadow:  0 0 10px #afb1b3;
+            border-radius: 5px 5px 0 0;
+            padding: 10px 0px;
+            position: relative;
+        }
+        .chatbox .chat-head .pic{
+            width: 80px;
+            margin: -40px auto 0;
+            line-height: 20px;
+            object-fit: cover;
+            
+        }
+        .chatbox .chat-head .pic img{
+            width: 100%;
+            border-radius: 50%;
+        }
+        .chatbox{
+            padding-top: 40px;
+            width: 400px;
+        }
+        .chatbox .local .txt .timeHm {
+            color: #aaa;
+            font-size: 12px;
+            position: absolute;
+            bottom: -20px;
+            right: 10px;
+        }
+        .chatbox .remote .txt .timeHm {
+            color: #aaa;
+            font-size: 12px;
+            position: absolute;
+            bottom: -20px;
+            left: 10px;
+        }
+        .chatbox .close{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            cursor: pointer;
+
+        }
+
+        .main-header .blogpage{
+            position: relative;
+        }
+        .main-header .blogpage::after{
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: -40px;
+            background: url(babyboss2.png);
+            background-size: cover;
+            width: 40px;
+            height: 40px;
+            animation: navmovie .8s infinite;
+        }
+        @keyframes navmovie {
+            0%{
+                top:-20px;
+              }
+            50%{
+                top:-5px; 
+               }
+            100%{
+                top:-20px;
+               }
+        }
+
+        .main-header{
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 20px;
+            position: relative;
+            
+            
+        }
+        .main-header .logo{
+            width: 40px;
+            height: 40px;
+        }
+        .main-header .logo img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .main-header .hb{
+            width: 40px;
+            height: 40px;
+            background-color: rgba(248, 93, 93, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            cursor: pointer;
+        }
+        .main-header .hb span{
+            width: 32px;
+            height: 2px;
+            background-color: black;
+        }
+        .main-header .hb span:first-child{
+            margin-top: 5px;
+        }
+        .main-header .hb span:last-child{
+            margin-bottom: 5px;
+        }
+        .main-header .main-nav{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            height: calc(100vh - 50px);
+            display: none;
+            z-index: 20;
+            width: 40%;
+        }
+        .main-header .main-nav li{
+            padding: 10px;
+        }
+        .main-header .main-nav a{
+            display: block;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        .main-header .cons {
+            position: relative;
+        }
+        .main-header .cons2 {
+            position: relative;
+        }
+        .main-header .arr{
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            transform: rotate(90deg);
+            transition: 0.5s;
+            border: none;
+        }
+        .main-header .arr2{
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            transform: rotate(90deg);
+            transition: 0.5s;
+            border: none;
+        }
+        
+        .main-header .secnav{
+            position: absolute;
+            top: 100%;
+            transform: translateY(-500px);
+            background-color: rgba(14, 13, 13, 0.8);
+            width: 100%;
+            flex-direction: column;
+            transition: .5s;
+            right: -100px;
+            z-index: 20;
+        }
+        .main-header .secnav2{
+            position: absolute;
+            top: 100%;
+            transform: translateY(-500px);
+            background-color: rgba(14, 13, 13, 0.8);
+            width: 100%;
+            flex-direction: column;
+            transition: .5s;
+            right: -100px;
+            z-index: 20;
+        }
+        .main-header .secnav li{
+            border-bottom: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        .main-header .secnav li a{
+            padding: 10px;
+        }
+        .main-header .secnav :hover{
+            background-color: #aec7bb;
+        }
+        .main-header .secnav2 li{
+            border-bottom: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        .main-header .secnav2 li a{
+            padding: 10px;
+        }
+        .main-header .secnav2 :hover{
+            background-color: #aec7bb;
+        }
+
+        .main-header .consecnav{
+            transform: translateY(0px);
+        }
+        .main-header .conarr{
+            transform: rotate(-90deg);
+        }
+        .job-banner{
+            position: relative;
+        }
+        .job-banner img{
+            width: 100%;
+            object-fit: cover;
+            vertical-align: middle;
+            height: 300px;
+        }
+        .job-banner .banner-title::before{
+            content: '海外工作者分享';
+            top: 30%;
+            left: 30%;
+            transform:translate(50%,50%);
+            position: absolute;
+            font-size: 30px;
+            font-weight: 700;
+
+        }
+        .blog .blog-title{
+            text-align: center;
+            font-size: 36px;
+            margin: 60px;
+            font-weight: 700;
+        }
+        .blog img{
+            width: 100%; 
+            vertical-align: middle;
+        }
+        .blog .txt{
+            background-color: rgba(243, 243, 242, 0.7);
+            padding: 30px 30px;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+        .blog .txt h2{
+            padding-bottom: 10px;
+
+        }
+        .blog .txt p{
+            text-indent: 1em;
+            line-height: 1.6em;
+        }
+        .blog a{
+            text-decoration: none;
+            color: black;
+        }
+        .peo-mike{
+            position: relative;
+        }
+        .peo-mike::after{
+            content: 'Mike Yu';
+            position: absolute;
+            top: -120px;
+            left: 120px;
+            font-size: 20px;
+            background-color:rgba(255, 0, 0, 0.8);
+            padding: 10px 10px;
+            display: block;
+            color: white;
+            z-index: 0;
+        }
+        .peo-mike::before{
+            content: '捷運駕駛';
+            position: absolute;
+            top: -80px;
+            left: 120px;
+            font-size: 40px;
+            background-color:rgba(0, 0, 0, .8);
+            color: white;
+            padding: 20px 30px;
+            display: block;
+            z-index: 1;
+        }
+        .peo-sala{
+            position: relative;
+        }
+        .peo-sala::after{
+            content: 'Sala-Hua';
+            position: absolute;
+            top: -120px;
+            left: 120px;
+            font-size: 20px;
+            background-color:rgba(255, 0, 0, 0.8);
+            padding: 10px 10px;
+            display: block;
+            color: white;
+            z-index: 0;
+        }
+        .peo-sala::before{
+            content: '爆破專家';
+            position: absolute;
+            top: -80px;
+            left: 120px;
+            font-size: 40px;
+            background-color:rgba(0, 0, 0, .8);
+            color: white;
+            padding: 20px 30px;
+            display: block;
+            z-index: 1;
+        }
+        .peo-peter{
+            position: relative;
+        }
+        .peo-peter::after{
+            content: 'Peter Su';
+            position: absolute;
+            top: -120px;
+            left: 120px;
+            font-size: 20px;
+            background-color:rgba(255, 0, 0, 0.8);
+            padding: 10px 10px;
+            display: block;
+            color: white;
+            z-index: 0;
+        }
+        .peo-peter::before{
+            content: '滑雪教練';
+            position: absolute;
+            top: -80px;
+            left: 120px;
+            font-size: 40px;
+            background-color:rgba(0, 0, 0, .8);
+            color: white;
+            padding: 20px 30px;
+            display: block;
+            z-index: 1;
+        }
+        .peo-roy{
+            position: relative;
+        }
+        .peo-roy::after{
+            content: 'Roy Lee';
+            position: absolute;
+            top: -120px;
+            left: 120px;
+            font-size: 20px;
+            background-color:rgba(255, 0, 0, 0.8);
+            padding: 10px 10px;
+            display: block;
+            color: white;
+            z-index: 0;
+        }
+        .peo-roy::before{
+            content: '焊接師傅';
+            position: absolute;
+            top: -80px;
+            left: 120px;
+            font-size: 40px;
+            background-color:rgba(0, 0, 0, .8);
+            color: white;
+            padding: 20px 30px;
+            display: block;
+            z-index: 1;
+        }
+        .sec-banner{
+            background:
+                    url(tecbac.png) no-repeat top left /cover,
+                    url(tecbac.png) no-repeat bottom right /cover;
+            overflow: hidden; 
+            margin-top: 60px;
+        }
+        .sec-banner img{
+            width: 100%;
+            vertical-align: bottom;
+            object-fit: cover;
+        }
+        .sec-banner .container{    
+            background-color: #fff;
+        }
+        .sec-banner .container .sec-conrow h3{
+            font-size: 30px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .sec-banner .container .sec-conrow small{
+            font-size: 24px;
+            font-weight: 300;
+            padding-top: 10px;
+            display: block;
+            text-align: center;
+        }
+        .sec-banner .container .sec-conrow{
+            justify-content: center;
+            align-items: center;
+        }
+        .sec-banner .item{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sec-banner .item .pic{
+            width: 80px;
+        }
+        .sec-banner .item .pic img{
+            width: 100%;
+            vertical-align: bottom;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .sec-banner .conitem .item h3{
+            margin-top: 50px;
+            position: relative;
+            font-size: 20px;
+            border-bottom: none;
+
+        }
+        .sec-banner .conitem:nth-child(1) h3:after{
+            content: 'Free';
+            font-size: 30px;
+            position: absolute;
+            bottom: 140%;
+            right: 30px;
+        }
+        .sec-banner .conitem:nth-child(2) h3:after{
+            content: '1.2k';
+            font-size: 30px;
+            position: absolute;
+            bottom: 140%;
+            right: 30px;
+        }
+        .sec-banner .conitem:nth-child(3) h3:after{
+            content: '95%';
+            font-size: 30px;
+            position: absolute;
+            bottom:140%;
+            right: 25px;
+        }
+        .sec-banner .conitem:nth-child(4) h3:after{
+            content: '95%';
+            font-size: 30px;
+            position: absolute;
+            bottom:140%;
+            right: 25px;
+        }
+        .sec-banner button{
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.664);
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #aec7bb;
+        }
+        .sec-banner .btn{
+            padding-top: 20px;
+            display: block;
+            text-align: center;
+            
+        }
+        .main-footer{
+            background-color: black;
+        }
+        /* .main-footer .container >.row{
+            flex-direction: column;
+            align-items: center;
+        } */
+        .main-footer .container .copycon{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+          
+        }
+        .main-footer .container .conheigh{
+            align-items: center;
+            padding-top: 40px;
+            margin-bottom: -40px;
+        }
+        .main-footer .container .item h3{
+            font-size: 14px;
+            border-bottom: 1px solid white;
+            color: #fff;
+        }
+        .main-footer .container .item-logo{
+            font-size: 14px;
+            color: #fff;
+        }
+        .main-footer .container .item-logo h3{
+            margin-bottom: 10px;
+        }
+        .main-footer .container .item-logo li{
+            line-height: 1.4em;
+        }
+        
+        .main-footer .container .item li{
+            color:white;
+            line-height: 1.4em;
+            margin-top: 5px;
+        }
+
+        .main-footer .copy{
+            color:white;
+            font-size: 12px;
+        }
+        .main-footer .conitem{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-footer .hide{
+            display: none;
+        }
+       
+
+
+
+        @media screen and (min-width:1024px){
+            .blog .row{
+                flex-wrap: nowrap;
+            }
+            .blog .item{
+                align-items: flex-end;
+                margin-bottom: 60px;
+                position: relative;
+            }
+            .blog .consize-pic{
+                width: 55%;
+                flex-shrink: 0;
+                
+            }
+            .blog .consize-txt{
+                width: 55%;
+                flex-shrink: 0;
+                box-sizing: border-box;
+                z-index: 1;
+            }
+            .blog .consize-txt.odd{
+                margin-left: -12.2%;
+            }
+            .blog .conod{
+                flex-direction: row-reverse;
+                
+            }
+            .blog .consize-txt.even{
+                margin-right: -12.2%;
+            }
+            .main-footer .hide{
+            display: inline-block;
+            }
+
+           
+        }
+        @media screen and (min-width:1200px) {
+            .main-footer .hide{
+            display: inline-block;
+        }
+        .main-header .hb{
+                display: none;
+            }
+            .main-header .main-nav{
+                position: relative;
+                top: 0;
+                left: 0;
+                background-color: transparent;
+                width: auto;
+                height: auto;
+                font-size: 0;
+                display: block;
+            }
+            .main-header .main-nav ul{
+                display:flex;
+            }
+            .main-header .main-nav a{
+                display: inline-block;
+                padding: 12px 40px;
+                font-size: 16px;
+                text-decoration: none;
+                color: #fff;
+            }
+            .main-header .cons a{
+                position: relative;
+                }
+            .main-header .cons2 a{
+                position: relative;
+                }
+            .main-header .arr{
+                position: absolute;
+                top: 30%;
+                right: 20px;
+                transform: rotate(90deg);
+                transition: 0.5s;
+            }
+            .main-header .arr2{
+                position: absolute;
+                top: 30%;
+                right: 20px;
+                transform: rotate(90deg);
+                transition: 0.5s;
+            }
+            .main-header .secnav{
+                position: absolute;
+                transform: translateY(-400px);
+                top: 100%;
+                flex-direction: column;
+                background-color: rgba(14, 13, 13, 0.8);
+                width: 150%;
+            }
+            .main-header .secnav2{
+                position: absolute;
+                transform: translateY(-400px);
+                top: 100%;
+                flex-direction: column;
+                background-color: rgba(14, 13, 13, 0.8);
+                width: 150%;
+            }
+            .main-header .secnav li{
+                border-bottom: 1px solid white;
+            }
+            .main-header .secnav :hover{
+                background-color: #aec7bb;
+            }
+            .main-header .consecnav{
+                transform: translateY(0px);
+            }
+            .main-header .conarr{
+                transform: rotate(-90deg);
+            }
+            .main-header .secnav2 li{
+                border-bottom: 1px solid white;
+            }
+            .main-header .secnav2:hover{
+                background-color: #aec7bb;
+            }
+            .main-header .consecnav2{
+                transform: translateY(0px);
+            }
+            .main-header .conarr2{
+                transform: rotate(-90deg);
+            }
+
+        }
+
+
+
+      
+
+    </style>
+</head>
+<body>
+    <div id="chatbox" class="chatbox">
+        <div class="chat-head">
+            <div id="close" class="close">
+                <img src="cross1.png" alt="">
+            </div>
+            <div class="pic">
+                <img src="team11.jpg" alt="">
+            </div>
+            <div class="headname">
+                <h2>Arlo Lee</h2>
+            </div>
+            <span>
+                Target Job 諮詢經理
+            </span>
+        </div>
+        <div id="cbox" class="chat">
+            <!-- <div id="remote" class="user remote">
+                <div class="picbox">
+                    <div class="pic">
+                        <img src="team1.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        顧問
+                    </div>
+                </div>
+        
+                <div class="txt">
+                    ssss
+                    <div class="timeHm">200</div>
+                </div>
+            </div>
+        
+            <div id="local" class="user local">
+                <div class="picbox">
+                    <div class="pic">
+                        <img src="team2.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        Ｍike
+                    </div>
+                </div>
+        
+                <div class="txt">
+                   sss
+                   <div class="timeHm">200</div>
+                </div>
+            </div> -->
+        </div>
+        <div class="form">
+            <div class="element">
+                <input id="content" type="text" placeholder="請輸入您的問題...">
+                <button id="btn" type="submit">發送</button>
+            </div>
+        </div>
+    </div>
+    <header class="main-header">
+        <a href="rwdindex.html" class="logo">
+            <img src="logo1.png" alt="">
+        </a>
+        <div class="hb">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li>
+                    <a href="rwdchatapge.html">即時通訊</a>
+                </li>
+                <li class="findjobpage">
+                    <a href="rwdfindjob.html">精選職缺</a>
+                </li>
+                <li class="cons" id="cons">
+                    <a href="#">職場資源
+                        <div class="blogpage"></div>
+                        <div class="arr" id="arr">></div>
+                    </a>
+                    <ul class="secnav" id="secNav">
+                        <li><a href="rwdblog.html">海外工作者分享</a></li>
+                        <li><a href="#">面試技巧</a></li>
+                        <li><a href="#">職能測驗</a></li>
+                    </ul>
+                </li>
+                <li class="cons" id="cons2">
+                    <a href="#">關於我們
+                    <div class="arr2" id="arr2">></div>
+                </a>
+                    <ul class="secnav" id="secNav2">
+                        <li><a href="rwdourteam.html">我們的團隊</a></li>
+                        <li><a href="#">服務項目</a></li>
+                        <li><a href="#">關於Target</a></li>
+                    </ul>
+                </li>
+                <li><a href="rwdcontact1.html">聯絡我們</a></li>
+                <li><a href="#">會員</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    
+    <section class="job-banner">     
+        <img src="nba3.jpeg" alt="">
+        <div class="banner-title"></div>   
+    </section>
+    <section class="blog">
+        <div class="container">
+            <div class="blog-title">
+                <h2></h2>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="row item ">
+                        <div class="col-12 col-xl-6 consize-pic">
+                            <div class="pic">
+                                <img src="blog1.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-6 consize-txt odd">
+                            <div class="txt peo-mike">
+                                <h2>心得分享</h2>
+                                <p>而來有一種，有限產業線上商標即將逐步世界盃共享考核資本怎麼樣，成功大門再說創意說著數學，很久審批公路提升權利開發者大會運作婚姻計劃是個，表面黑暗領導推廣模糊共同更加眼中回應，你說寶貝發送，品牌此時資。<a href="#">More...</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row item conod">
+                        <div class="col-12 col-xl-6 consize-pic ">
+                            <div class="pic">
+                                <img src="blog11.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-6 consize-txt even">
+                            <div class="txt peo-peter">
+                                <h2>心得分享</h2>
+                        <p>我是忽然西安提高，位置平均一致屏幕重要接着電視台認為創作難得父母，不去審核自動猶豫是一個共享成本明年經驗，給我簡單都沒廣大事業一對檢查全球有人情形明星，雖然生活人員江湖全文國內免費歌手負責床上所需圖。<a href="#">More...</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row item">
+                        <div class="col-12 col-xl-6 consize-pic">
+                            <div class="pic">
+                                <img src="blog21.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-6 consize-txt odd">
+                            <div class="txt peo-sala">
+                                <h2>心得分享</h2>
+                        <p>豐原因而驚訝緊急必然要去一些，一致請在樓上聲音專家，諮詢可見當中第一章，的人包括年輕人，本來您的你怎麼政治家園可見適用規範畢業生，熟悉不限意見便是家園會員冠軍建設她是列表庫存另一個宣傳頻道，聯盟給我。<a href="#">More...</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row item conod">
+                        <div class="col-12 col-xl-6 consize-pic">
+                            <div class="pic">
+                                <img src="blog31.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-6 consize-txt even">
+                            <div class="txt peo-roy">
+                                <h2>心得分享</h2>
+                        <p>添加種種也要中學規定打印接觸衣服必要精靈呼吸電子字元他們我一，合作一片精美擁有，當時模糊對付上述是的加盟顧問推坑王以為依據，容易通常合作他的指導，使用程式婦女平衡，百姓新聞頓時醫學微笑報名調整，人體。<a href="#">More...</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-banner">   
+        <div class="container">
+            <div class="row sec-conrow">
+                <div class="col-12 col-lg-4">
+                    <h3>Do you want a job?</h3>
+                    <small>Start chat with us!</small>
+                    <div class="btn" id="secBtn">
+                        <button>開始即時通訊</button>
+                    </div>
+                </div>
+                        <div class="col-12 col-lg-8">
+                            <div class="row">
+                                <div class="conitem col-lg-3 col-6">
+                                    <div class="item">
+                                        <div class="pic">
+                                            <img src="secf02.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <h3>求職服務費</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="conitem col-lg-3 col-6">
+                                    <div class="item">
+                                        <div class="pic">
+                                            <img src="secf04.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <h3>網站用戶數</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="conitem col-lg-3 col-6">
+                                    <div class="item">
+                                        <div class="pic">
+                                            <img src="secf03.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <h3>成功求職率</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="conitem col-lg-3 col-6">
+                                    <div class="item">
+                                        <div class="pic">
+                                            <img src="secf01.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <h3>服務滿意度</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-xl-12">
+                    <div class="row conheigh">
+                        <div class="col-12 col-lg-4 col-xl-4 conitem">
+                            <div class="item-logo">
+                                <h3>Target Job人力資源有限公司</h3>
+                                <ul>
+                                    <li>營業時間：週一至週五 09:30~18:30</li>
+                                    <li>服務專線：123-456-789</li>
+                                    <li>傳真：123-456-799</li>
+                                    <li>公司地址：台北市中壢區墾丁大街太麻里山上</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-8 col-xl-8">
+                            <div class="row">
+                                <div class="hide col-4 col-lg-4 col-xl-4">
+                                    <div class="item">
+                                        <h3>搜尋職缺</h3>
+                                        <ul>
+                                            <li>精選職缺</li>
+                                            <li>熱門職缺</li>
+                                            <li>Ｑ＆Ａ</li>
+                                         </ul>
+                                    </div>
+                                </div>
+                                <div class="hide col-4 col-lg-4 col-xl-4">
+                                    <div class="item">
+                                        <h3>職場資源</h3>
+                                        <ul>
+                                            <li>海外工作者分享</li>
+                                            <li>履歷撰寫技巧</li>
+                                            <li>面試技巧</li>
+                                         </ul>
+                                    </div>
+                                </div>
+                                <div class="hide col-4 col-lg-4 col-xl-4">
+                                    <div class="item">
+                                        <h3>追蹤我們</h3>
+                                        <ul>
+                                            <li>
+                                             <i class="fab fa-instagram"></i>
+                                                <i class="fab fa-twitter-square"></i>
+                                                <i class="fab fa-facebook-square"></i>
+                                            </li>
+                                            <li>我們終於有FB, IG, Youtube了 !!! 在社群媒體上追蹤我們吧!</li>
+                                         </ul>   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-12 copycon">
+                    <div class="copy">
+                        copyright &copy; 2021 Target Job Human Resource Co.,Ltd. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(function () {
+         $('#cons').click(function(){
+             $('#secNav').toggleClass('consecnav')
+             $('.arr').toggleClass('conarr');
+         });
+         $('#cons2').click(function(){
+             $('#secNav2').toggleClass('consecnav')
+             $('.arr2').toggleClass('conarr');
+         });
+         $(".hb").click(function(){
+             $('.main-nav').slideToggle();
+         });
+         $('.close').click(function(){
+             $('.chatbox').hide();
+         })
+         $('.pic-fixedchat,#secBtn').click(function(){
+             $('.chatbox').show();
+         })
+ 
+    });
+
+
+
+    var content = document.getElementById("content");
+        var box = document.getElementById("cbox");
+        var remote = document.getElementById("remote");
+        var local = document.getElementById("local");
+        var scollDown = document.getElementById("scollDown");
+        var time = new Date();
+        var h = time.getHours();
+        var m = time.getMinutes();
+        var qa = [
+            "您好",
+            "掰掰",
+            "杜拜是阿拉伯聯合大公國人口最多的城市，也是中東地區的經濟和金融中心。",
+            "菲律賓擁有七千多個大小島嶼。長灘島有亞洲最美沙灘美譽，沙質細膩潔白，海水清澈透明。",
+            "美國阿豆仔很多的地方",
+            "冷知識，你知道嗎？日本有很多日本人",
+            "大象的媽媽是猩猩,因為相由心生",
+            "薏仁被趕出家門，街頭藝人",
+            "電腦不快樂，因為他有Ｄ槽（低潮",
+            "有一根牙籤走在路上，看到刺蝟，牙籤：啊～公車來了",
+            "我早上看時間，不是為了起床，是為了看還可以睡多久",
+            "少給我臉色看，以為自己是調色盤？",
+            "你是不是太無聊？想跟我聊天？",
+            "你知道嗎？佛地魔超有主見，因為他不會被牽著鼻子走",
+            "把外勞關在家，猜一個地名，Ａ：索馬利亞",
+            "一條褲子可以穿20年，猜地名，Ａ神奈川",
+            "你知道嗎？吃完鮭魚會肚子痛，因為鮭魚在胃食道逆流",
+         ];
+        function keyEnter(){
+            if(window.event.keyCode==13){
+                check();
+            }
+        }
+        function timecon(){
+            
+            setTimeout("answer()",1000);
+
+        }
+        function answer(){
+            let n = qa.length;
+            let r = parseInt(n*Math.random());
+            box.innerHTML = box.innerHTML + `
+            <div id="remote" class="user remote">
+                <div class="picbox">
+                    <div class="pic">
+                        <img src="team11.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        Arlo
+                    </div>
+                </div>
+        
+                <div class="txt">
+                    ${qa[r]}\n
+                    <div class="timeHm">${h}:${m}</div>
+                </div>
+            </div>
+            `;
+            box.scrollTop = box.scrollHeight;
+            
+            
+        }
+        function check(){
+            if(content.value.length>0){
+            box.innerHTML = box.innerHTML + `
+            <div id="local" class="user local">
+                <div class="picbox">
+                    <div class="pic">
+                        <img src="team21.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        Kacy
+                    </div>
+                </div>
+        
+                <div class="txt">
+                    ${content.value}\n
+                    <div class="timeHm">${h}:${m}</div>
+                </div>
+            </div>
+        
+            `;
+
+            content.value ="";
+            box.scrollTop = box.scrollHeight;
+            timecon();
+            // setTimeout("answer()",1000);
+            }
+        };
+        function init(){
+            document.getElementById("btn").onclick = check;
+            document.onkeypress = keyEnter;
+        };
+        window.addEventListener("load",init,false);
+ </script>
+ 
+    
+    
+    
+</body>
+</html>

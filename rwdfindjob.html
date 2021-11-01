@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gird.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700;900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700;900&display=swap');
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+        *{
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        /* body{
+            position: relative;
+            margin-top: 70px;
+        } */
+        .main-header .findjobpage{
+            position: relative;
+        }
+        .main-header .findjobpage ::before{
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 0;
+            background: url(babyboss2.png);
+            background-size: cover;
+            width: 40px;
+            height: 40px;
+            animation: navmovie .8s infinite;
+        }
+        @keyframes navmovie {
+            0%{
+                top:5px;
+              }
+            50%{
+                top:20px; 
+               }
+            100%{
+                top:5px;
+               }
+        }
+
+        .main-header{
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 20px;
+            position: relative;
+            
+            
+        }
+        .main-header .logo{
+            width: 40px;
+            height: 40px;
+        }
+        .main-header .logo img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .main-header .hb{
+            width: 40px;
+            height: 40px;
+            background-color: rgba(248, 93, 93, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            cursor: pointer;
+        }
+        .main-header .hb span{
+            width: 32px;
+            height: 2px;
+            background-color: black;
+        }
+        .main-header .hb span:first-child{
+            margin-top: 5px;
+        }
+        .main-header .hb span:last-child{
+            margin-bottom: 5px;
+        }
+        .main-header .main-nav{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            height: calc(100vh - 50px);
+            display: none;
+            z-index: 20;
+            width: 40%;
+        }
+        .main-header .main-nav li{
+            padding: 10px;
+        }
+        .main-header .main-nav a{
+            display: block;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        .main-header .cons {
+            position: relative;
+        }
+        .main-header .cons2 {
+            position: relative;
+        }
+        .main-header .arr{
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            transform: rotate(90deg);
+            transition: 0.5s;
+            border: none;
+        }
+        .main-header .arr2{
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            transform: rotate(90deg);
+            transition: 0.5s;
+            border: none;
+        }
+        
+        .main-header .secnav{
+            position: absolute;
+            top: 100%;
+            transform: translateY(-500px);
+            background-color: rgba(14, 13, 13, 0.8);
+            width: 100%;
+            flex-direction: column;
+            transition: .5s;
+            right: -100px;
+            z-index: 20;
+        }
+        .main-header .secnav2{
+            position: absolute;
+            top: 100%;
+            transform: translateY(-500px);
+            background-color: rgba(14, 13, 13, 0.8);
+            width: 100%;
+            flex-direction: column;
+            transition: .5s;
+            right: -100px;
+            z-index: 20;
+        }
+        .main-header .secnav li{
+            border-bottom: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        .main-header .secnav li a{
+            padding: 10px;
+        }
+        .main-header .secnav :hover{
+            background-color: #aec7bb;
+        }
+        .main-header .secnav2 li{
+            border-bottom: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        .main-header .secnav2 li a{
+            padding: 10px;
+        }
+        .main-header .secnav2 :hover{
+            background-color: #aec7bb;
+        }
+
+        .main-header .consecnav{
+            transform: translateY(0px);
+        }
+        .main-header .conarr{
+            transform: rotate(-90deg);
+        }
+     
+        .job-banner{
+            position: relative;
+        }
+        .job-banner img{
+            width: 100%;
+            object-fit: cover;
+            vertical-align: middle;
+            height: 300px;
+        }
+        .job-banner .banner-title::before{
+            content: '精選職缺';
+            top: 30%;
+            left: 30%;
+            position: absolute;
+            font-size: 36px;
+            font-weight: 700;
+
+        }
+        .find-job{
+            margin-top: 60px;
+        }
+        .find-job .search-bar{
+            font-size: 0;
+            display: flex;
+            padding-bottom: 10px;
+        }
+       
+        .find-job .conrow{
+           display: flex;
+           justify-content: center;
+        }
+        .find-job .container .item-aside{
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        .find-job .item-aside::before{
+            content:'';
+            position: absolute;
+            top: -190px;
+            left: 90px;
+            z-index: 1; 
+            /* display: block; */
+            width: 150px;
+            height: 150px;
+            background: url(working1.png);
+            background-size: cover;
+            transition: 1s ease-in-out;
+            display: none;
+        }
+        .find-job .search-bar input,
+        .find-job .search-bar button{
+            border: none;
+            background-color: rgb(233, 227, 227);
+            padding: 5px 10px;
+        }
+        .find-job .search-bar input{
+            border-radius: 200px 0px 0px 200px;
+        }
+        .find-job .search-bar button{
+            border-radius: 0px 200px 200px 0;
+        }
+        .find-job .search-bar input:focus{
+            outline: none;
+        }
+        .find-job .option-list{
+            padding-bottom: 10px;
+        }
+        .find-job .option-list h3{
+            padding-bottom: 10px;
+        }
+        .find-job .option-list .iption{
+            padding-top: 10px;
+        }
+        .find-job .btn{
+            text-align: center;
+        }
+        .find-job .btn button{
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color:#aec7bb;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .find-job .page ul{
+            display: flex;
+            justify-content: space-between;
+        }
+        .find-job .jobitem a{
+            text-decoration: none;
+            color:rgb(8, 8, 8);
+        }
+        .find-job .job-title{
+            font-weight: 300;
+            font-size: 20px;
+        }
+        .find-job .jobitem .item{
+            background-color: rgb(219, 217, 217);
+            padding: 30px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 5px;
+            position: relative;
+            transition: 2s ease-in-out;
+        }
+        .find-job .jobitem .item:hover:before{
+            content:'';
+            position: absolute;
+            top: -10px;
+            left: 0px;
+            z-index: 1; 
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: url(star1.png);
+            background-size: cover;
+            transition: 1s ease-in-out;
+        }
+       
+        .find-job .jobitem .item::after{
+            content: '';
+            border-top:20px solid transparent  ;
+            border-bottom:20px solid rgb(228, 131, 114)  ;
+            border-left:20px solid transparent  ;
+            border-right:20px solid rgba(228, 131, 114)  ;
+            position: absolute;
+            border-radius: 5px;
+            bottom: 0;
+            right: 0;
+            transition: 1s;
+        }
+        .find-job .jobitem .item:hover:after{
+            content: '';
+            border-top:20px solid rgb(228, 131, 114)  ;
+            border-bottom:20px solid white  ;
+            border-left:20px solid rgba(228, 131, 114)  ;
+            border-right:20px solid white  ;
+            position: absolute;
+            border-radius: 5px;
+            bottom: 0;
+            right: 0;
+        }
+        .find-job .jobitem .item p,
+        .find-job .jobitem .item h2{
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+        .find-job .jobitem .item .job-local,
+        .find-job .jobitem .item .job-price{
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+        }
+        .find-job .page-list a{
+            text-decoration: none;
+            color: #000;
+            padding-left: 20px;
+        }
+        .main-footer{
+            background-color: black;
+        }
+        /* .main-footer .container >.row{
+            flex-direction: column;
+            align-items: center;
+        } */
+        .main-footer .container .copycon{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+          
+        }
+        .main-footer .container .conheigh{
+            align-items: center;
+            padding-top: 40px;
+            margin-bottom: -40px;
+        }
+        .main-footer .container .item h3{
+            font-size: 14px;
+            border-bottom: 1px solid white;
+            color: #fff;
+        }
+        .main-footer .container .item-logo{
+            font-size: 14px;
+            color: #fff;
+        }
+        .main-footer .container .item-logo h3{
+            margin-bottom: 10px;
+        }
+        .main-footer .container .item-logo li{
+            line-height: 1.4em;
+        }
+        
+        .main-footer .container .item li{
+            color:white;
+            line-height: 1.4em;
+            margin-top: 5px;
+        }
+
+        .main-footer .copy{
+            color:white;
+            font-size: 12px;
+        }
+        .main-footer .conitem{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-footer .hide{
+            display: none;
+        }
+        @media screen and (min-width:1024px) {
+            .find-job .item-aside::before{
+            content:'';
+            position: absolute;
+            top: -190px;
+            left: 90px;
+            z-index: 1; 
+            display: block;
+            width: 150px;
+            height: 150px;
+            background: url(working1.png);
+            background-size: cover;
+            transition: 1s ease-in-out;
+            }
+
+            .find-job .container .item-aside{
+            display: flex;
+            justify-content: center;
+            position: relative;
+            }
+            
+            .find-job .page{
+            text-decoration: none;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+            .main-footer .hide{
+            display: inline-block;
+
+            }
+        
+
+        }
+        @media screen and (min-width:1200px) {
+            .main-footer .hide{
+            display: inline-block;
+        }
+        .main-header .hb{
+                display: none;
+            }
+            .main-header .main-nav{
+                position: relative;
+                top: 0;
+                left: 0;
+                background-color: transparent;
+                width: auto;
+                height: auto;
+                font-size: 0;
+                display: block;
+            }
+            .main-header .main-nav ul{
+                display:flex;
+            }
+            .main-header .main-nav a{
+                display: inline-block;
+                padding: 12px 40px;
+                font-size: 16px;
+                text-decoration: none;
+                color: #fff;
+            }
+            .main-header .cons a{
+                position: relative;
+                }
+            .main-header .cons2 a{
+                position: relative;
+                }
+            .main-header .arr{
+                position: absolute;
+                top: 30%;
+                right: 20px;
+                transform: rotate(90deg);
+                transition: 0.5s;
+            }
+            .main-header .arr2{
+                position: absolute;
+                top: 30%;
+                right: 20px;
+                transform: rotate(90deg);
+                transition: 0.5s;
+            }
+            .main-header .secnav{
+                position: absolute;
+                transform: translateY(-400px);
+                top: 100%;
+                flex-direction: column;
+                background-color: rgba(14, 13, 13, 0.8);
+                width: 150%;
+            }
+            .main-header .secnav2{
+                position: absolute;
+                transform: translateY(-400px);
+                top: 100%;
+                flex-direction: column;
+                background-color: rgba(14, 13, 13, 0.8);
+                width: 150%;
+            }
+            .main-header .secnav li{
+                border-bottom: 1px solid white;
+            }
+            .main-header .secnav :hover{
+                background-color: #aec7bb;
+            }
+            .main-header .consecnav{
+                transform: translateY(0px);
+            }
+            .main-header .conarr{
+                transform: rotate(-90deg);
+            }
+            .main-header .secnav2 li{
+                border-bottom: 1px solid white;
+            }
+            .main-header .secnav2:hover{
+                background-color: #aec7bb;
+            }
+            .main-header .consecnav2{
+                transform: translateY(0px);
+            }
+            .main-header .conarr2{
+                transform: rotate(-90deg);
+            }
+
+        }
+       
+
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <a href="rwdindex.html" class="logo">
+            <img src="logo1.png" alt="">
+        </a>
+        <div class="hb">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li>
+                    <a href="rwdchatapge.html">即時通訊</a>
+                </li>
+                <li class="findjobpage">
+                    <a href="rwdfindjob.html">精選職缺</a>
+                </li>
+                <li class="cons" id="cons">
+                    <a href="#">職場資源
+                        <div class="arr" id="arr">></div>
+                    </a>
+                    <ul class="secnav" id="secNav">
+                        <li><a href="rwdblog.html">海外工作者分享</a></li>
+                        <li><a href="#">面試技巧</a></li>
+                        <li><a href="#">職能測驗</a></li>
+                    </ul>
+                </li>
+                <li class="cons" id="cons2">
+                    <a href="#">關於我們
+                    <div class="arr2" id="arr2">></div>
+                </a>
+                    <ul class="secnav" id="secNav2">
+                        <li><a href="rwdourteam.html">我們的團隊</a></li>
+                        <li><a href="#">服務項目</a></li>
+                        <li><a href="#">關於Target</a></li>
+                    </ul>
+                </li>
+                <li><a href="rwdcontact1.html">聯絡我們</a></li>
+                <li><a href="#">會員</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+
+    <section class="job-banner">
+        <img src="nba4.jpeg" alt="">
+        <div class="banner-title"></div>    
+    </section>
+    <section class="find-job">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="item-aside">
+                                <div class="search-bar">
+                                    <input type="text" placeholder=" 請輸入關鍵字">
+                                    <button>
+                                        <i class="bi bi-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-12 conrow">
+                            <div class="option-list">
+                                <h3>國家</h3>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        新加坡
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        阿聯酋
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        柬埔寨
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        菲律賓
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        日本
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-12 conrow">
+                            <div class="option-list">
+                                <h3>職缺種類</h3>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        資訊軟體
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        餐飲服務
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        休閒娛樂
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        客戶服務
+                                    </label>
+                                </div>
+                                <div class="iption">
+                                    <label for="option-item">
+                                        <input type="checkbox" name="option-item">
+                                        行銷企劃
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 btn">
+                            <button>開始搜尋</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-8">
+                    <div class="row jobitem">
+                        <div class="col-12 col-lg-6">
+                            <a href="rwdopening.html">
+                                <div class="item">
+                                    <div class="job-title">
+                                        <h2>前端工程師</h2>
+                                    </div>
+                                    <div class="job-local">
+                                        <p>2020/10/10</p>
+                                        <p>【菲律賓】</p>
+                                    </div>
+                                    <div class="job-price">
+                                        <p>正職</p>
+                                        <p>ＮＴ＄ 90k up</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <a href="rwdopening.html">
+                                <div class="item">
+                                    <div class="job-title">
+                                        <h2>後端工程師</h2>
+                                    </div>
+                                    <div class="job-local">
+                                        <p>2020/10/10</p>
+                                        <p>【菲律賓】</p>
+                                    </div>
+                                    <div class="job-price">
+                                        <p>正職</p>
+                                        <p>ＮＴ＄ 80k up</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <a href="rwdopening.html">
+                                <div class="item">
+                                    <div class="job-title">
+                                        <h2>賭場公關</h2>
+                                    </div>
+                                    <div class="job-local">
+                                        <p>2020/10/10</p>
+                                        <p>【澳門】</p>
+                                    </div>
+                                    <div class="job-price">
+                                        <p>正職</p>
+                                        <p>ＮＴ＄ 80k up</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <a href="rwdopening.html">
+                                <div class="item">
+                                    <div class="job-title">
+                                        <h2>帳房專員</h2>
+                                    </div>
+                                    <div class="job-local">
+                                        <p>2020/10/10</p>
+                                        <p>【澳門】</p>
+                                    </div>
+                                    <div class="job-price">
+                                        <p>正職</p>
+                                        <p>ＮＴ＄ 70k up</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <a href="rwdopening.html">
+                                <div class="item">
+                                    <div class="job-title">
+                                        <h2>機場地勤</h2>
+                                    </div>
+                                    <div class="job-local">
+                                        <p>2020/10/10</p>
+                                        <p>【新加坡】</p>
+                                    </div>
+                                    <div class="job-price">
+                                        <p>正職</p>
+                                        <p>ＮＴ＄ 80k up</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <a href="rwdopening.html">
+                                <div class="item">
+                                    <div class="job-title">
+                                        <h2>外場服務員</h2>
+                                    </div>
+                                    <div class="job-local">
+                                        <p>2020/10/10</p>
+                                        <p>【新加坡】</p>
+                                    </div>
+                                    <div class="job-price">
+                                        <p>正職</p>
+                                        <p>ＮＴ＄ 60k up</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <a href="rwdopening.html">
+                                <div class="item">
+                                    <div class="job-title">
+                                        <h2>文字客服專員</h2>
+                                    </div>
+                                    <div class="job-local">
+                                        <p>2020/10/10</p>
+                                        <p>【日本】</p>
+                                    </div>
+                                    <div class="job-price">
+                                        <p>正職</p>
+                                        <p>ＮＴ＄ 60k up</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <a href="rwdopening.html">
+                                <div class="item">
+                                    <div class="job-title">
+                                        <h2>診所助理</h2>
+                                    </div>
+                                    <div class="job-local">
+                                        <p>2020/10/10</p>
+                                        <p>【日本】</p>
+                                    </div>
+                                    <div class="job-price">
+                                        <p>正職</p>
+                                        <p>ＮＴ＄ 60k up</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="page">
+                        <ul class="page-list">
+                            <li>
+                                <a href="#">
+                                    《 上一頁
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    3
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    4
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    下一頁 》
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-xl-12">
+                    <div class="row conheigh">
+                        <div class="col-12 col-lg-4 col-xl-4 conitem">
+                            <div class="item-logo">
+                                <h3>Target Job人力資源有限公司</h3>
+                                <ul>
+                                    <li>營業時間：週一至週五 09:30~18:30</li>
+                                    <li>服務專線：123-456-789</li>
+                                    <li>傳真：123-456-799</li>
+                                    <li>公司地址：台北市中壢區墾丁大街太麻里山上</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-8 col-xl-8">
+                            <div class="row">
+                                <div class="hide col-4 col-lg-4 col-xl-4">
+                                    <div class="item">
+                                        <h3>搜尋職缺</h3>
+                                        <ul>
+                                            <li>精選職缺</li>
+                                            <li>熱門職缺</li>
+                                            <li>Ｑ＆Ａ</li>
+                                         </ul>
+                                    </div>
+                                </div>
+                                <div class="hide col-4 col-lg-4 col-xl-4">
+                                    <div class="item">
+                                        <h3>職場資源</h3>
+                                        <ul>
+                                            <li>海外工作者分享</li>
+                                            <li>履歷撰寫技巧</li>
+                                            <li>面試技巧</li>
+                                         </ul>
+                                    </div>
+                                </div>
+                                <div class="hide col-4 col-lg-4 col-xl-4">
+                                    <div class="item">
+                                        <h3>追蹤我們</h3>
+                                        <ul>
+                                            <li>
+                                             <i class="fab fa-instagram"></i>
+                                                <i class="fab fa-twitter-square"></i>
+                                                <i class="fab fa-facebook-square"></i>
+                                            </li>
+                                            <li>我們終於有FB, IG, Youtube了 !!! 在社群媒體上追蹤我們吧!</li>
+                                         </ul>   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-12 copycon">
+                    <div class="copy">
+                        copyright &copy; 2021 Target Job Human Resource Co.,Ltd. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(function () {
+         $('#cons').click(function(){
+             $('#secNav').toggleClass('consecnav')
+             $('.arr').toggleClass('conarr');
+         });
+         $('#cons2').click(function(){
+             $('#secNav2').toggleClass('consecnav')
+             $('.arr2').toggleClass('conarr');
+         });
+         $(".hb").click(function(){
+             $('.main-nav').slideToggle();
+         });
+         $('.close').click(function(){
+             $('.chatbox').hide();
+         })
+         $('.pic-fixedchat').click(function(){
+             $('.chatbox').show();
+         })
+ 
+    });
+    </script>
+   
+   
+</body>
+</html>

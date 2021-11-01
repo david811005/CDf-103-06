@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700;900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .job h2{
+            text-align: center;
+            padding: 30px;
+        }
+
+        .job .ourteam{
+            width: 1200px;
+            margin: auto;         
+        }
+        .job .wrap{
+            width: 1200px;
+            display: flex;
+            
+
+        }
+        .job .wrap .item{
+            width: 400px;
+            margin: 15px;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 5px 5px 5px #888;
+            transform: translateY(0px);
+            transition: .7s;
+        }
+        .job .wrap .item .txt{
+            text-align: center;
+            padding: 20px;        
+        }
+        .job .wrap .item .pic{
+            position: relative;
+        }
+        .job .wrap .item .pic img{
+            width: 100%;
+            vertical-align: middle;
+            flex-grow: 1;
+        }
+        .job .wrap .item .pic::before{
+            content: '';
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            border-bottom: 30px solid transparent;
+            border-top: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-left: 30px solid transparent;
+            box-shadow: 0px 0px 0px #888;
+            right: 0px;
+            top: 0px;
+            box-shadow: 0px 0px 0px #888;
+            transition: .3s;
+        }
+        .job .wrap .item .txt h2{
+            border-bottom: 1px solid #888;
+            padding: 0.3em 0em;
+            font-weight: 700; 
+        }
+        .job .wrap .item .txt p{
+            line-height: 1.5;
+            font-weight: 300;
+        }
+        .job .item:hover{
+            transform: translateY(-10px);
+        }
+        .job .item:hover .pic::before{
+            border-bottom: 30px solid rgb(221, 221, 221);
+            border-top: 30px solid rgb(255, 255, 255);
+            border-right: 30px solid rgb(255, 255, 255);
+            border-left: 30px solid rgb(221, 221, 221);
+            box-shadow: 5px 5px 5px #888;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <section class="job">
+        <h2>精選職缺</h2>
+        <div class="ourteam">
+            <div class="wrap">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/500/400?random=100" alt="">
+                    </div>
+                    <div class="txt">
+                        <h2>游祥文</h2>
+                        <p>會議有關部門簡單出售沉默推坑王，谷歌打開業主貼布取消小學組圖股權共同門口控制說了那就，密碼身體旅遊處罰聽說住宅互相政治，科技一套課堂才能前後線路畢業生武器裝備失望基礎，路線小孩論壇所屬技巧漸漸你是把你，您是我市是我，加速怪物警察笑着業務神秘結構，獨特轉帖。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/500/400?random=30" alt="">
+                    </div>
+                    <div class="txt">
+                        <h2>游祥文</h2>
+                        <p>會議有關部門簡單出售沉默推坑王，谷歌打開業主貼布取消小學組圖股權共同門口控制說了那就，密碼身體旅遊處罰聽說住宅互相政治，科技一套課堂才能前後線路畢業生武器裝備失望基礎，路線小孩論壇所屬技巧漸漸你是把你，您是我市是我，加速怪物警察笑着業務神秘結構，獨特轉帖。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/500/400?random=20" alt="">
+                    </div>
+                    <div class="txt">
+                        <h2>游祥文</h2>
+                        <p>會議有關部門簡單出售沉默推坑王，谷歌打開業主貼布取消小學組圖股權共同門口控制說了那就，密碼身體旅遊處罰聽說住宅互相政治，科技一套課堂才能前後線路畢業生武器裝備失望基礎，路線小孩論壇所屬技巧漸漸你是把你，您是我市是我，加速怪物警察笑着業務神秘結構，獨特轉帖。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

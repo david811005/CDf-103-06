@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gird.css">
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+        .main-header{
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 20px;
+            position: relative;
+            
+        }
+        .main-header .logo{
+            width: 40px;
+            height: 40px;
+        }
+        .main-header .logo img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .main-header .hb{
+            width: 40px;
+            height: 40px;
+            background-color: rgba(248, 93, 93, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            cursor: pointer;
+        }
+        .main-header .hb span{
+            width: 32px;
+            height: 2px;
+            background-color: black;
+        }
+        .main-header .hb span:first-child{
+            margin-top: 5px;
+        }
+        .main-header .hb span:last-child{
+            margin-bottom: 5px;
+        }
+        .main-header .main-nav{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 30%;
+            height: calc(100vh - 50px);
+            display: none;
+        }
+        .main-header .main-nav li{
+            padding: 10px;
+        }
+        .main-header .main-nav a{
+            display: block;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        .main-header .cons {
+            position: relative;
+        }
+        .main-header .arr{
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            transform: rotate(90deg);
+            transition: 0.5s;
+            border: none;
+        }
+        .main-header .secnav{
+            position: absolute;
+            top: 100%;
+            width: 70%;
+            transform: translateY(-500px);
+            background-color: rgba(14, 13, 13, 0.8);
+            width: 100%;
+            flex-direction: column;
+            transition: .5s;
+            right: -100px;
+        }
+        .main-header .secnav li{
+            border-bottom: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        .main-header .secnav :hover{
+            background-color: #aec7bb;
+        }
+
+        .main-header .consecnav{
+            transform: translateY(0px);
+        }
+        .main-header .conarr{
+            transform: rotate(-90deg);
+        }
+        @media screen and (min-width : 1200px){
+            .main-header .logo{
+                width: 60px;
+                height: 60px;
+            }
+            .main-header .main-header .logo img{
+                width: 100%;
+                vertical-align: middle;
+            }
+            .main-header .main-header .hb{
+                display: none;
+            }
+            .main-header .main-nav{
+                position: relative;
+                top: 0;
+                left: 0;
+                background-color: transparent;
+                width: auto;
+                height: auto;
+                font-size: 0;
+                display: inline-block;
+            }
+            .main-header .main-nav ul{
+                display:flex;
+            }
+            .main-header .main-nav a{
+                display: inline-block;
+                padding: 12px 40px;
+                font-size: 16px;
+                text-decoration: none;
+                color: #fff;
+            }
+            .main-header .cons a{
+                position: relative;
+                }
+            .main-header .arr{
+                position: absolute;
+                top: 30%;
+                right: 20px;
+                transform: rotate(90deg);
+                transition: 0.5s;
+            }
+            .main-header .secnav{
+                position: absolute;
+                transform: translateY(-400px);
+                top: 100%;
+                flex-direction: column;
+                background-color: rgba(14, 13, 13, 0.8);
+                width: 150%;
+            }
+            .main-header .secnav li{
+                border-bottom: 1px solid white;
+            }
+            .main-header .secnav :hover{
+                background-color: #aec7bb;
+            }
+            .main-header .consecnav{
+                transform: translateY(0px);
+            }
+            .main-header .conarr{
+                transform: rotate(-90deg);
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <a href="#" class="logo">
+            <img src="logo1.png" alt="">
+        </a>
+        <div class="hb">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li>
+                    <a href="#">即時通訊</a>
+                </li>
+                <li>
+                    <a href="#">精選職缺</a>
+                </li>
+                <li class="cons" id="cons">
+                    <a href="#">職場資源
+                        <div class="arr" id="arr">></div>
+                    </a>
+                    <ul class="secnav" id="secNav">
+                        <li><a href="#">職場專欄</a></li>
+                        <li><a href="#">海外工作者分享</a></li>
+                        <li><a href="#">隨便不知道</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">關於我們</a></li>
+                <li><a href="#">聯絡我們</a></li>
+                <li><a href="#">會員</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    
+    <script>
+       $(function () {
+            $('#cons').click(function(){
+                $('.main-nav ul').toggleClass('consecnav')
+                $('.arr').toggleClass('conarr');
+            });
+            $(".hb").click(function(){
+                $('.main-nav').slideToggle();
+            });
+    
+       });
+    </script>
+    
+   
+
+    
+</body>
+</html>
