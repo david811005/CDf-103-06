@@ -46,7 +46,7 @@
                }
         }
 
-        .chatbox{
+        /* .chatbox{
             position: fixed;
             bottom: 100px;
             right: 0;
@@ -125,7 +125,7 @@
         }
         .chatbox .form{
             /* width: 100%; */
-            display: flex;
+            /* display: flex;
             align-items: center;
             justify-content: flex-end;
             height: 50px;
@@ -134,8 +134,8 @@
             padding-right: 10px;
             background-color: #ffffff;
             
-        }
-        .chatbox .form .element{
+        } */
+        /* .chatbox .form .element{
             display: flex;
             border: 1px solid #ccc;
             border-radius: 20px;
@@ -215,7 +215,7 @@
             top: 5px;
             cursor: pointer;
 
-        }
+        }  */
 
         
         .jumparticle{
@@ -902,61 +902,7 @@
     </style>
 </head>
 <body>
-    <div id="chatbox" class="chatbox">
-        <div class="chat-head">
-            <div id="close" class="close">
-                <img src="cross1.png" alt="">
-            </div>
-            <div class="pic">
-                <img src="team11.jpg" alt="">
-            </div>
-            <div class="headname">
-                <h2>Arlo Lee</h2>
-            </div>
-            <span>
-                Target Job 諮詢經理
-            </span>
-        </div>
-        <div id="cbox" class="chat">
-            <!-- <div id="remote" class="user remote">
-                <div class="picbox">
-                    <div class="pic">
-                        <img src="team1.jpg" alt="">
-                    </div>
-                    <div class="name">
-                        顧問
-                    </div>
-                </div>
-        
-                <div class="txt">
-                    ssss
-                    <div class="timeHm">200</div>
-                </div>
-            </div>
-        
-            <div id="local" class="user local">
-                <div class="picbox">
-                    <div class="pic">
-                        <img src="team2.jpg" alt="">
-                    </div>
-                    <div class="name">
-                        Ｍike
-                    </div>
-                </div>
-        
-                <div class="txt">
-                   sss
-                   <div class="timeHm">200</div>
-                </div>
-            </div> -->
-        </div>
-        <div class="form">
-            <div class="element">
-                <input id="content" type="text" placeholder="請輸入您的問題...">
-                <button id="btn" type="submit">發送</button>
-            </div>
-        </div>
-    </div>
+   
     <header class="main-header">
         <a href="rwdindex.html" class="logo">
             <img src="logo1.png" alt="">
@@ -1392,15 +1338,6 @@
          $(".hb").click(function(){
              $('.main-nav').slideToggle();
          });
-         $('.close').click(function(){
-             $('.chatbox').hide();
-         })
-         $('.pic-fixedchat').click(function(){
-             $('.chatbox').show();
-         })
-         $('.pic-fixedchat,#secBtn').click(function(){
-             $('.chatbox').show();
-         })
  
     });
 
@@ -1475,117 +1412,6 @@
             
         }
 
-// ----------------------下面另外一隻
-
-
-var content = document.getElementById("content");
-        var box = document.getElementById("cbox");
-        var remote = document.getElementById("remote");
-        var local = document.getElementById("local");
-        var scollDown = document.getElementById("scollDown");
-        var time = new Date();
-        var h = time.getHours();
-        var m = time.getMinutes();
-        var qa = [
-            "您好",
-            "掰掰",
-            "杜拜是阿拉伯聯合大公國人口最多的城市，也是中東地區的經濟和金融中心。",
-            "菲律賓擁有七千多個大小島嶼。長灘島有亞洲最美沙灘美譽，沙質細膩潔白，海水清澈透明。",
-            "美國阿豆仔很多的地方",
-            "冷知識，你知道嗎？日本有很多日本人",
-            "大象的媽媽是猩猩,因為相由心生",
-            "薏仁被趕出家門，街頭藝人",
-            "電腦不快樂，因為他有Ｄ槽（低潮",
-            "有一根牙籤走在路上，看到刺蝟，牙籤：啊～公車來了",
-            "我早上看時間，不是為了起床，是為了看還可以睡多久",
-            "少給我臉色看，以為自己是調色盤？",
-            "你是不是太無聊？想跟我聊天？",
-            "你知道嗎？佛地魔超有主見，因為他不會被牽著鼻子走",
-            "把外勞關在家，猜一個地名，Ａ：索馬利亞",
-            "一條褲子可以穿20年，猜地名，Ａ神奈川",
-            "你知道嗎？吃完鮭魚會肚子痛，因為鮭魚在胃食道逆流",
-         ];
-        function keyEnter(){
-            if(window.event.keyCode==13){
-                check();
-            }
-        }
-        function timecon(){
-            
-            setTimeout("answer()",1000);
-
-        }
-        function answer(){
-            let n = qa.length;
-            let r = parseInt(n*Math.random());
-            box.innerHTML = box.innerHTML + `
-            <div id="remote" class="user remote">
-                <div class="picbox">
-                    <div class="pic">
-                        <img src="team11.jpg" alt="">
-                    </div>
-                    <div class="name">
-                        Arlo
-                    </div>
-                </div>
-        
-                <div class="txt">
-                    ${qa[r]}\n
-                    <div class="timeHm">${h}:${m}</div>
-                </div>
-            </div>
-            `;
-            box.scrollTop = box.scrollHeight;
-            
-            
-        }
-        function check(){
-            if(content.value.length>0){
-            box.innerHTML = box.innerHTML + `
-            <div id="local" class="user local">
-                <div class="picbox">
-                    <div class="pic">
-                        <img src="team21.jpg" alt="">
-                    </div>
-                    <div class="name">
-                        Kacy
-                    </div>
-                </div>
-        
-                <div class="txt">
-                    ${content.value}\n
-                    <div class="timeHm">${h}:${m}</div>
-                </div>
-            </div>
-        
-            `;
-
-            content.value ="";
-            box.scrollTop = box.scrollHeight;
-            timecon();
-            // setTimeout("answer()",1000);
-            }
-        };
-
-
-
-
-
-        function init(){
-            let teampics = document.querySelectorAll(".pic img");
-            for(let i =0;i<teampics.length;i++){
-                teampics[i].onclick = showBox;
-            };
-                  
-            var closeitem = document.getElementById("closebtn")
-            closeitem.onclick = closeBox;
-
-            document.getElementById("btn").onclick = check;
-            document.onkeypress = keyEnter;
-            
-            
-        }
-        window.addEventListener("load",init,false);
 
         // $(function(){
         //         $('.ourteam').click(function(e){
@@ -1609,16 +1435,16 @@ var content = document.getElementById("content");
             
             
         // }
-        // function init(){
-        //     let teampics = document.querySelectorAll(".pic img");
-        //     for(let i =0;i<teampics.length;i++){
-        //         teampics[i].onclick = showBox;
-        //     };
-        //     var closeitem = document.getElementById("closebtn")
-        //     closeitem.onclick = closeBox;
+        function init(){
+            let teampics = document.querySelectorAll(".pic img");
+            for(let i =0;i<teampics.length;i++){
+                teampics[i].onclick = showBox;
+            };
+            var closeitem = document.getElementById("closebtn")
+            closeitem.onclick = closeBox;
             
-        // }
-        // window.addEventListener("load",init,false);
+        }
+        window.addEventListener("load",init,false);
 
             
 
